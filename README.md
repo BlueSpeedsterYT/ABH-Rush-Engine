@@ -15,7 +15,7 @@ To use the ABH-Rush Engine in your projects, you will need to have done the foll
 * Open up GameMaker and select the "Open" tab, then go to where you put in the ABH-Rush project file and open it.
 And voila! You got a whole framework ready to go!
 # CREDITS:
-ABH - Framework Creator and Developer (GMS1 Version)
-Mika - Framework Developer and Project Contributor (GMS1 Version)
-BlueSpeedster - Framework Developer and Project Contributor
+*ABH - Framework Creator and Developer (GMS1 Version)
+*Mika - Framework Developer and Project Contributor (GMS1 Version)
+*BlueSpeedster - Framework Developer and Project Contributor
 and all the members of the ABH Discord server!
