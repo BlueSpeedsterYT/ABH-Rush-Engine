@@ -1,6 +1,6 @@
 ## ABH-Rush Engine [GITHUB VERSION]
 ![ABH-RUSH Engine](https://cdn.discordapp.com/attachments/614413650656100352/695919971095805962/ABH_Rush_Logo.png)
-The ABH-Rush Engine is a Modern Sonic framework developed within GameMaker (Made for Studio 1.4.9999, Supports Studio 2)
+The ABH-Rush Engine is a Modern Sonic framework developed within GameMaker (Remade for 2023.4 and above)
 # FRAMEWORK FEATURES:
 * Modern Sonic gameplay based upon the Sonic Rush series.
 * A large set of objects available at your own disposal (with the ability to even create more!)
@@ -9,10 +9,10 @@ The ABH-Rush Engine is a Modern Sonic framework developed within GameMaker (Made
 and so much more...
 # HOW TO SET UP?
 To use the ABH-Rush Engine in your projects, you will need to have done the following
-* Got a copy of GameMaker (Either Studio 1.4.9999 [MOST COMPATIBLE] or the [latest version](https://gamemaker.io/en/download) [RECOMMENDED]) on your *computer*.
+* Got a copy of GameMaker (Download the latest version [here](https://gamemaker.io/en/download)) on your *computer*.
 * Downloaded the latest commit of the ABH-Rush Engine project folder from here.
 * Unzip it (or in the case of Git users, get to its directory) and put it in your own folder.
-* Open up GameMaker and select the "Open" tab (or "Import" if you're using the latest GM version), then go to where you put in the ABH-Rush project file and open it.
+* Open up GameMaker and select the "Open" tab, then go to where you put in the ABH-Rush project file and open it.
 And voila! You got a whole framework ready to go!
 # CREDITS:
 ABH - Framework Creator and Developer
