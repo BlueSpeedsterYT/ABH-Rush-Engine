@@ -3,13 +3,14 @@
 	// Set Game Title
 	window_set_caption($"{GameTitle} - {GameVersion}");
 	
+	// Set Up Game Resolutions
+	GameData.GameWidth = 240;
+	GameData.GameHeight = 160;
+
 	// Set up Game Window
-	window_set_size(GameWidth*2, GameHeight*2);
+	surface_resize(application_surface, GameData.GameWidth*WindowScale, GameData.GameHeight*WindowScale);
+	window_set_size(GameData.GameWidth*WindowScale, GameData.GameHeight*WindowScale);
 	window_center();
-	
-	// Set up GUI Layer
-	display_set_ui_visibility(true);
-	display_set_gui_size(GameWidth, GameHeight);
 	
 	// [DEV] Set Up Some Shit
 	instance_create_depth(CameraViewX, CameraViewY, -99999, Audio);

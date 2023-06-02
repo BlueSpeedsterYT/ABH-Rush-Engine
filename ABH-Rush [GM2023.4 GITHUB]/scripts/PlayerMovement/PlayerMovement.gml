@@ -14,6 +14,9 @@ function PlayerMovement(){
 	// Ducking and Rolling:
 	DuckRoll();
 	
+	// Look Up:
+	LookUp();
+	
 	// Spindash:
 	Spindash();
 }

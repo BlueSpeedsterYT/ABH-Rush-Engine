@@ -5,13 +5,13 @@ if(form == PlayerFormNormal)
     {
         case PlayerSonic:
         {
-            //draw_Sonic();
+            DrawSonic();
         }
         break;
             
         //case PlayerShadow:
         //{
-        //    draw_Shadow();
+        //   DrawShadow();
         //}
         //break;
     }
@@ -21,13 +21,13 @@ if(form == PlayerFormNormal)
 //    {
 //        case PlayerSonic:
 //        {
-//            draw_SuperSonic();
+//            DrawSuperSonic();
 //        }
 //        break;
             
 //        case PlayerShadow:
 //        {
-//            draw_SuperShadow();
+//            DrawSuperShadow();
 //        }
 //        break;
 //	}
@@ -35,7 +35,7 @@ if(form == PlayerFormNormal)
 
 //if(character == PlayerTails)
 //{
-//    draw_Tails();
+//    DrawTails();
 //}
 
 boost_direction = point_direction(x_begin,y_begin,x,y)

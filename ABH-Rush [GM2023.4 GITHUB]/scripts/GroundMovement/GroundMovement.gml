@@ -3,21 +3,21 @@
 function GroundMovement(){
 
 	// Current Highest Speed Available
-	speedCurrentX = 0
+	speedCurrentX = 0;
 
 
 if instance_exists(fxBoost) && boostAmount > 0
 {
     if ground
-        accel = 1
+        accel = 1;
     else 
-        accel = 0.0625
-    speedCurrentX = speedLimitX   
+        accel = 0.0625;
+    speedCurrentX = speedLimitX;
 }
 else if (form != PlayerFormNormal)
 {
-    accel = 0.125
-    speedCurrentX = speedLimitX - 2
+    accel = 0.125;
+    speedCurrentX = speedLimitX - 2;
 }
 else
 {
@@ -28,25 +28,25 @@ else
     if actionCurrent != PlayerActionRoll
     {
         if speedX > speedMidX
-            speedX = speedMidX
+            speedX = speedMidX;
         else if speedX < -speedMidX
-            speedX = -speedMidX
+            speedX = -speedMidX;
     }
     else
     {
         if speedX > speedLimitX
-            speedX = speedLimitX
+            speedX = speedLimitX;
         else if speedX < -speedLimitX
-            speedX = -speedLimitX
+            speedX = -speedLimitX;
     }
 }
 
 if instance_exists(fxBoost)
 {   
     if speedX > 0
-        animDir = 1
+        animDir = 1;
     else if speedX < 0
-        animDir = -1
+        animDir = -1;
 }
 
 //skidding
@@ -85,30 +85,30 @@ if actionCurrent == PlayerActionNormal && ground
         //    audio_play_sound(snd_skid_dirt,1,0)
         //else
         //    audio_play_sound(snd_skidhigh,1,0)
-        actionCurrent = PlayerActionSkid
-        animIndex = 0
+        actionCurrent = PlayerActionSkid;
+        animIndex = 0;
          
     }
 }
 if actionCurrent == PlayerActionSkid 
 {
     if speedX > 1
-        speedX -= decel/4
+        speedX -= decel/4;
     if speedX < -1
-        speedX += decel/4
+        speedX += decel/4;
     
     if speedX > 1 && keyLeft
-        speedX -= decel/3
+        speedX -= decel/3;
     if speedX < -1 && keyRight
-        speedX += decel/3
+        speedX += decel/3;
     
     if (animDir == 1 && keyRight && !keyLeft) || (animDir == -1 && keyLeft && !keyRight)
-        actionCurrent = PlayerActionNormal
+        actionCurrent = PlayerActionNormal;
         
     if abs(speedX) <= 1 || !ground
     {
-        actionCurrent = PlayerActionNormal
-        animDir = -animDir
+        actionCurrent = PlayerActionNormal;
+        animDir = -animDir;
     }
 }
 
@@ -129,7 +129,7 @@ if actionCurrent = PlayerActionNormal //&&  !instance_exists(obj_boostfx)
 	            if speedX >=0 
 	            {
 	                if speedX< speedCurrentX 
-	                    speedX+=accel
+	                    speedX+=accel;
 	            } 
 	            else speedX+=decel;
 	        }
@@ -138,7 +138,7 @@ if actionCurrent = PlayerActionNormal //&&  !instance_exists(obj_boostfx)
 	            if speedX<=0 
 	            {
 	                if speedX > -speedCurrentX 
-	                    speedX-=accel
+	                    speedX-=accel;
 	            }         
 	            else 
 	                speedX-=decel;
@@ -155,12 +155,27 @@ if actionCurrent = PlayerActionNormal //&&  !instance_exists(obj_boostfx)
 	    }
 	    else
 	    {
-	        if keyRight
-	        {if speedX >=0 {if speedX < speedCurrentX speedX+=accel*2}}
-	        if keyLeft
-	        {if speedX<=0 {if speedX > -speedCurrentX speedX-=accel*2}}
-	        if !keyRight && !keyLeft
-	        {if speedX > 0 speedX-=fric; if speedX<0 speedX+=fric;if speedX <= fric && speedX >= -fric speedX=0;}
+	        if keyRight {
+				if speedX >=0 {
+					if speedX < speedCurrentX 
+						speedX+=accel*2;
+				}
+			}
+			
+	        if keyLeft {
+				if speedX<=0 {
+					if speedX > -speedCurrentX
+						speedX-=accel*2;
+				}
+			}
+	        if !keyRight && !keyLeft {
+				if speedX > 0 
+					speedX -= fric; 
+				if speedX < 0 
+					speedX += fric;
+				if speedX <= fric && speedX >= -fric 
+					speedX = 0;
+			}
 	    }
 	}
 	//ground spin

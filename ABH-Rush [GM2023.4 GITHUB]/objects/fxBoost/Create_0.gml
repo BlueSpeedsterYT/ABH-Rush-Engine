@@ -10,4 +10,10 @@
 
 	alive = true;
 	
+	Camera.CamFollow = false
+	if abs(Player.speedX) < 5
+	    Camera.CamFollowTimer = 20;
+	else 
+	    Camera.CamFollowTimer = 8;
+	
 	Player.speedX = Player.speedLimitX*Player.animDir;

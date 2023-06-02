@@ -1,15 +1,17 @@
-/// @description Handle Camera Code
+/// @description Set up Custom Alarms
 
-	CameraX = clamp(CameraX, 0, room_width-GameWidth);
-	CameraY = clamp(CameraY, 0, room_height-GameHeight);
-
-	if ObjectID != noone {
-		CameraX = ObjectID.x;
-		CameraY = ObjectID.y;
+	if(CamFollowTimer > 0)
+	{
+		CamFollowTimer -= 1;
+		if CamFollowTimer == 1 {
+			CamFollow = true;
+		}
 	}
 	
-	
-	camera_set_view_pos(CameraViewID, floor(ObjectID.x), floor(ObjectID.y));
-	//camera_set_view_pos(CameraViewID, floor(CameraX), floor(CameraY));
-	
-	
+	if(ShockwaveTimer > 0)
+	{
+		ShockwaveTimer -= 1;
+		if ShockwaveTimer == 1 {
+			ShockwaveEnabled = false;
+		}
+	}

@@ -3,8 +3,15 @@ function macros(){
 	// GENERAL GAME DATA
 	#macro GameTitle "ABH-Rush Engine"
 	#macro GameVersion "V. 1.75"
-	#macro GameWidth 456
-	#macro GameHeight 256
+	#macro GameData global
+	#macro GlobalGameWidth GameData.GameWidth
+	#macro GlobalGameHeight GameData.GameHeight
+	#macro GameHUD HUDType.Legacy
+	enum HUDType {
+		Legacy = 0,
+		Mirai = 1,
+		Proto = 2
+	}
 	
 	// GAME CONTROL DATA
 	#macro InputKeyboard 0

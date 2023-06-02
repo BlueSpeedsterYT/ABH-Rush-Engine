@@ -1,8 +1,8 @@
 /// @description Init Character Code
 
 	// Create Objects
-	PlayerCam = instance_create_depth(x, y, 0, Camera); // Camera
-	StageManager = instance_create_depth(x, y, 0, Stage); // Stage Controller
+	PlayerCam = instance_create_depth(x, y, -99999, Camera); // Camera
+	StageManager = instance_create_depth(x, y, -99999, Stage); // Stage Controller
 	
 	// Set up Checkpoint system
 	if instance_exists(StageManager) { // Check if Stage Controller is available
@@ -65,6 +65,7 @@
 	qteAmount = 1; // Checks the QTE amount.
 	currentPanel = 1; // Used in Jump Panels. Checks the current Jump Panel.
 	speedZip = 0; // The speed gotten from the Zipline.
+	lookTimer = 0;
 	
 	// Effects:
 	trailStep = 0; // trail timer.
