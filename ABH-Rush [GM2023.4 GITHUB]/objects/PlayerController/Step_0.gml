@@ -83,18 +83,6 @@
 				animSprite = sprSonicIdle;
 			}
 			break;
-			// UNCOMMENT THE NEXT TWO CODE BLOCKS IF SHADOW AND/OR TAILS ARE ADDED INTO YOUR GAME.
-			//case PlayerShadow:
-			//{
-			//	animSprite = sprShadowIdle;
-			//}
-			//break;
-			
-			//case PlayerTails:
-			//{
-			//	animSprite = sprTailsIdle;
-			//}
-			//break;
 		}
 	}
 	
@@ -105,7 +93,7 @@
 	    inputType = InputXbox // set input type to "InputXbox"
 		
 	// Control the Boost Energy and it's draining
-	if(form != PlayerFormNormal)
+	if(form != PlayerFormNormal || Stage.StageAct == ZoneType.HUB)
 	{
 		boostAmount = 100;
 	}
@@ -124,7 +112,7 @@
 	        instance_create_depth(x, y-1, depth + 1, fxTrail);
 			switch(character){
 				case PlayerSonic:{
-					trailBlend = c_blue;
+					trailBlend = c_aqua;
 				}
 				break;
 			}

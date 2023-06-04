@@ -1,11 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function DrawSonic(){
-	if speedX == 0 && (actionCurrent <= PlayerActionNormal) && ground
+if speedX == 0 && (actionCurrent <= PlayerActionNormal) && ground
     animAngle = 0
 else if (animAngle != 0 && actionCurrent == PlayerActionNormal && !ground)
 {
-    if animAngle%360 < 180   
+    if animAngle mod 360 < 180   
         animAngle -= 7
     else if animAngle% 360 > 180
         animAngle += 7
@@ -16,10 +16,10 @@ else if (animAngle != 0 && actionCurrent == PlayerActionNormal && !ground)
         else
             animAngle -= 10
     }
-    if animAngle % 360 < 10
+    if animAngle mod 360 < 10
         animAngle = 0
 }
-//else if ground && collision_line(x,y,x,y+20,obj_water_surface,true,true) //if running on water then angle is 0
+//else if ground && collision_line(x,y,x,y+20,parWaterSurface,true,true) //if running on water then angle is 0
 //{
     //animAngle = 0
 //}
@@ -47,7 +47,12 @@ if animFrame >= 1
 }
 
 // Init Character Animations
-if(speedX == 0) AnimSet(PlayerActionNormal, sprSonicIdle, 0.20, PlayerActionNormal); // Idle
+// Idle
+if(speedX == 0 && ground) && actionCurrent == PlayerActionNormal{
+	animSprite = sprSonicIdle;
+	animFrame += 0.20;
+	actionLast = PlayerActionNormal;
+}
 
 // Duck
 if actionCurrent == PlayerActionLookDown
@@ -71,8 +76,7 @@ if actionCurrent == PlayerActionLookUp
 //walking running and spriting
 if (speedX != 0 && ground) && actionCurrent == PlayerActionNormal
 {
-    if actionLast == PlayerActionNormal
-    {
+    if actionLast == PlayerActionNormal {
         animIndex = 0;
     }
     actionLast = PlayerActionJump;
