@@ -19,7 +19,7 @@
 	
 	// Character Init:
 	depth = -1;
-	character = PlayerSonic; // Main Character
+	character = GameData.CurrentCharacter; // Main Character
 	form = PlayerFormNormal; // Current Form
 	
 	mask = 16; // The Player's Mask (Used for collision)
@@ -70,7 +70,8 @@
 	qteAmount = 1; // Checks the QTE amount.
 	currentPanel = 1; // Used in Jump Panels. Checks the current Jump Panel.
 	speedZip = 0; // The speed gotten from the Zipline.
-	lookTimer = 0;
+	lookTimer = 0; // Look Timer, Used for the Camera.
+	allowStomp = true; // Allows the Player to Stomp.
 	
 	// Effects:
 	trailStep = 0; // trail timer.

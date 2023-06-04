@@ -1,20 +1,20 @@
 /// @description Init Camera Code
 	
 	// Camera Settings
-	HalfWidth = GlobalGameWidth/2;
-	HalfHeight = GlobalGameHeight/2;
 	ShockwaveTimer = 0;
 	ShockwaveEnabled = false;
-	ShockwaveEffectX = 0;
-	ShockwaveEffectY = 0;
+	ShockwaveEffect = 10;
+	CamFollow = true;
+	CamFollowTimer = 0;
+	CamType = "Mirai";
 	
 	// Camera Positions
 	CameraX = x;
 	CameraY = y;
-	CamFollow = true;
-	CamFollowTimer = 0;
-	CameraShiftX = 0;
-	CameraShiftY = 0;
+	CameraOffsetX = 0;
+	CameraOffsetY = 0;
+	
+	// Camera Limits
 	LimitLeft = 0;
 	LimitRight = room_width;
 	LimitTop = 0;

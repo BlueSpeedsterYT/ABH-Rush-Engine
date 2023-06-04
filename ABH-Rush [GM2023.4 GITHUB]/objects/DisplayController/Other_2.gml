@@ -6,6 +6,13 @@
 	// Set Up Game Resolutions
 	GameData.GameWidth = 456;
 	GameData.GameHeight = 256;
+	
+	// Set up Game Data
+	GameData.TotalRings = 0;
+	GameData.CurrentCharacter = PlayerSonic;
+	GameData.CurrentPartner = -1;
+	GameData.CurrentLivesCount = 5;
+	
 
 	// Set up Game Window
 	surface_resize(application_surface, GameData.GameWidth*WindowScale, GameData.GameHeight*WindowScale);

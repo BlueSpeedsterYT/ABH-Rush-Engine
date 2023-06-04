@@ -20,7 +20,7 @@
 	if(newAlarm[2] > 0) // Homing Dash Gravity
 	{
 		newAlarm[2] -= 1;
-		if(newAlarm[2] == 1 && actionCurrent == PlayerActionHomingDash)
+		if(newAlarm[2] == 1 && actionCurrent == PlayerActionHomingNoTarget)
 		{
 			actionCurrent = PlayerActionNormal;
 			if(character == PlayerSonic) speedX = 0; // UNCOMMENT THIS CODE TO LET SONIC GAIN ADDITIONAL SPEED.
@@ -33,6 +33,7 @@
 		newAlarm[3] -= 1;
 		if(newAlarm[3] == 1)
 		{
+			GameData.CurrentLivesCount -= 1;
 			room_restart();
 		}
 	}
@@ -62,14 +63,14 @@
 			wallJumpOff = true;
 		}
 	}
-	if(newAlarm[8] > 0) // Something about Tails.
+	if(newAlarm[8] > 0) // Tails' Flight
 	{
 		newAlarm[8] -= 1;
 		if(newAlarm[8] == 1)
 		{
 			if(character == PlayerTails){
 				animIndex = 0;
-				actionCurrent = PlayerActionHomingDash;
+				actionCurrent = PlayerActionHomingNoTarget;
 			}
 		}
 	}
@@ -105,7 +106,7 @@
 	}
 	
 	// Create Effects
-	if instance_exists(fxBoost) || (character == PlayerShadow && (actionCurrent == PlayerActionHomingDash)) || (form != PlayerFormNormal)
+	if instance_exists(fxBoost) || (character == PlayerShadow && (actionCurrent == PlayerActionHomingNoTarget)) || (form != PlayerFormNormal)
 	{
 	    trailStep += 1
 	    if trailStep >= 7
@@ -219,3 +220,6 @@
 	    if damageEffect == 1
 	        isHit = true;
 	}
+	
+	// Clamp Player X Area to avoid going out of bounds
+	x = clamp(x, PlayerCam.LimitLeft+32, PlayerCam.LimitRight-32);

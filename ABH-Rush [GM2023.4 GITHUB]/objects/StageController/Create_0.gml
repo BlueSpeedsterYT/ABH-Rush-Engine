@@ -30,7 +30,7 @@
 	StageTimeLimit = 5999999;
 	CountdownTimer = 0;
 	StageTimer = 0; // Current Stage Timer.
-	StageLives = 5; // Current Stage Lives.
+	StageLives = GameData.CurrentLivesCount; // Current Stage Lives.
 	StageScore = 0; // Current Stage Score.
 	StageRingScore = 0;
 	StageEnemyScore = 0;

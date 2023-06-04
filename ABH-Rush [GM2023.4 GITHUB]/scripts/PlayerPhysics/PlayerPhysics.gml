@@ -117,7 +117,7 @@ function PlayerPhysics(){
 	// Gravity
 	if !ground
 	{
-	    if character == PlayerTails && (actionCurrent == PlayerActionHomingAttack || actionCurrent == PlayerActionHomingDash)
+	    if character == PlayerTails && (actionCurrent == PlayerActionHomingTarget || actionCurrent == PlayerActionHomingNoTarget)
 	        speedY += 0.03125
 	    else 
 	        speedY += grav;

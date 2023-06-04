@@ -46,7 +46,7 @@
     
 	// Draw Tails'... Something:
 	// [NOTE] UNCOMMENT THE CODE ONCE YOU ADDED IN TAILS TO YOUR GAME
-	//if character == PlayerTails && actionCurrent == PlayerActionHomingAttack
+	//if character == PlayerTails && actionCurrent == PlayerActionHomingTarget
 	//{
 	//    draw_circular_bar(x + animDir*18, y - 15, 100, 100, c_black, 5, 1, 3)
 	//    draw_circular_bar(x + animDir*18, y - 15, newAlarm[8]/480 * 100, 100, c_lime, 5, 1, 3)

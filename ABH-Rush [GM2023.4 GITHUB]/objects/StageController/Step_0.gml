@@ -23,6 +23,7 @@
 			case HUDType.Legacy:
 			{
 				StageHUDType = HUDType.Proto;
+				Camera.CamType = "Mirai";
 				show_debug_message("\n[DEBUG] HUD Swapped to 'Proto'");
 			}
 			break;
@@ -30,6 +31,7 @@
 			case HUDType.Proto:
 			{
 				StageHUDType = HUDType.Legacy;
+				Camera.CamType = "Legacy";
 				show_debug_message("\n[DEBUG] HUD Swapped to 'Legacy'");
 			}
 			break;
@@ -83,7 +85,8 @@
 	}
 	
 	// Restart Room
-	if(keyboard_check_pressed(ord("R"))){
+	if(keyboard_check_pressed(ord("R")) && StageLives > 0){
+		//GameData.CurrentLivesCount -= 1;
 		room_restart();
 	}
 	

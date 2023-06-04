@@ -31,6 +31,7 @@ function macros(){
 	#macro Display DisplayController
 	#macro Camera CameraController
 	#macro Stage StageController
+	#macro Goal GoalManager
 	#macro XboxRumble XboxRumbleController
 	
 	// PLAYER ID MACROS
@@ -57,8 +58,8 @@ function macros(){
 	#macro PlayerActionNormal 0
 	#macro PlayerActionJump 1
 	#macro PlayerActionRoll 2
-	#macro PlayerActionHomingAttack 4
-	#macro PlayerActionHomingDash 4.5
+	#macro PlayerActionHomingTarget 4
+	#macro PlayerActionHomingNoTarget 4.5
 	#macro PlayerActionSpring 5
 	#macro PlayerActionDashRing 6
 	#macro PlayerActionDashRamp 7
@@ -74,6 +75,7 @@ function macros(){
 	#macro PlayerActionCorkscrew 16
 	#macro PlayerActionRollCorkscrew 17
 	#macro PlayerActionStomp 18
+	#macro PlayerActionStompAlt 18.5
 	#macro PlayerActionWallJumpInit 19
 	#macro PlayerActionWallJump 20
 	#macro PlayerActionCannon 21

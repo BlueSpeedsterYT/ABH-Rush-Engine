@@ -13,6 +13,7 @@
 				draw_set_color(c_white);
 				draw_set_alpha(HUDAlpha);
 				draw_text(CameraViewX+16, CameraViewY+16, $"RINGS: {StringNumberZero(StageRings, 3)}");
+				draw_text(CameraViewX+CameraViewWidth-16-string_width($"LIVES: {StringNumberZero(StageLives, 2)}"), CameraViewY+16, $"LIVES: {StringNumberZero(StageLives, 2)}");
 				var i = 0;
 				repeat(2)
 				{
@@ -61,6 +62,7 @@
 			draw_set_valign(fa_top);
 			draw_set_color(c_white);
 			draw_text(CameraViewX+16, CameraViewY+16, $"RINGS: {StringNumberZero(StageRings, 3)}");
+			draw_text(CameraViewX+CameraViewWidth-16-string_width($"LIVES: {StringNumberZero(StageLives, 2)}"), CameraViewY+16, $"LIVES: {StringNumberZero(StageLives, 2)}");
 			var i = 0;
 			repeat(2)
 			{

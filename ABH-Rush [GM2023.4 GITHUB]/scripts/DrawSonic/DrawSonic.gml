@@ -241,4 +241,7 @@ if actionCurrent == PlayerActionSlide && animSprite == sprSonicSlide
 // Corkscrew
 AnimSetSprite(PlayerActionCorkscrew, sprSonicCorkscrew);
 
+// Stomp
+AnimSetSimple(PlayerActionStomp, sprSonicStomp, 0.5);
+
 }

@@ -32,6 +32,9 @@ function PlayerMovement(){
 	// [SONIC AND SHADOW ONLY] Slide Attack:
 	SlideAttack();
 	
+	// [SONIC AND SHADOW ONLY] Stomp Attack:
+	StompAttack();
+	
 	// Auto Tunnel:
 	AutoTunnel();
 }

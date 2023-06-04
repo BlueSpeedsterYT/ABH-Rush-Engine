@@ -10,10 +10,11 @@
 
 	alive = true;
 	
-	Camera.CamFollow = false
 	if abs(Player.speedX) < 5
-	    Camera.CamFollowTimer = 20;
+	    DisableCamera(20);
 	else 
-	    Camera.CamFollowTimer = 8;
+	    DisableCamera(8);
 	
 	Player.speedX = Player.speedLimitX*Player.animDir;
+	
+	gamepad_set_rumble(30);
