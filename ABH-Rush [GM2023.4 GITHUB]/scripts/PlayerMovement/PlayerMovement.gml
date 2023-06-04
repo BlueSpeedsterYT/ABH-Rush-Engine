@@ -19,4 +19,19 @@ function PlayerMovement(){
 	
 	// Spindash:
 	Spindash();
+	
+	// Spring Jump & Dash Ring:
+	SpringJumpDashRing();
+	
+	// Dash Ramp:
+	DashRamp();
+	
+	// Dash Pad:
+	DashPad();
+	
+	// [SONIC AND SHADOW ONLY] Slide Attack:
+	SlideAttack();
+	
+	// Auto Tunnel:
+	AutoTunnel();
 }

@@ -13,7 +13,7 @@ function LookUp(){
 			animIndex = 0;
 		}
 	}
-	if (!keyUp || !ground || keyLeft || keyRight) && actionCurrent == PlayerActionLookUp {
+	if (!keyUp || !ground || keyLeft || keyRight) && (actionCurrent == PlayerActionLookUp && animIndex >= 5) {
 		actionCurrent = PlayerActionNormal;
 		lookTimer = 0;
 	}

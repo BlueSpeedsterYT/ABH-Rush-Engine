@@ -4,6 +4,10 @@
 	StageTitle = "Stage Title"; // Main Stage Name.
 	StartType = PlayerStartIdle; // How a Stage *SHOULD* start.
 	StageMission = "Mission Name"; // Mission Name.
+	//BestRank = GetStageRank();
+	//BestTime = GetStageTime();
+	//BestScore = GetStageScore();
+	//BestCharacter = GetStageCharacter();
 	
 	// Set up Gameplay Data:
 	StageHUDType = GameHUD;
@@ -11,23 +15,29 @@
 	HUDShow = true;
 	HUDAlpha = 0;
 	xHUD = -CameraViewWidth/2;
-	xHUD2 = CameraViewWidth+(CameraViewWidth/2);
+	xHUD2 = CameraViewWidth/2;
 	yHUD = -CameraViewHeight/2;
-	yHUD2 = CameraViewHeight+(CameraViewHeight/2);
+	yHUD2 = CameraViewHeight/2;
 	EnableTimer = true; // Enables the Stage Timer.
 	isCountDown = false; // Is the stage using a Countdown timer.
-	CountdownTime[0] = 99;
-	CountdownTime[1] = 59;
-	CountdownTime[2] = 59;
-	StageTimer[0] = 0; // Current Stage Timer.
-	StageTimer[1] = 0;
-	StageTimer[2] = 0;
-	TotalStageTimerText = $"{StringNumberZero(StageTimer[2], 2)}:{StringNumberZero(StageTimer[1], 2)}.{StringNumberZero(StageTimer[0], 2)}"
+	StageTimeLimit = 5999999;
+	CountdownTimer = 0;
+	StageTimer = 0; // Current Stage Timer.
 	StageLives = 5; // Current Stage Lives.
+	StageScore = 0; // Current Stage Score.
+	StageRingScore = 0;
+	StageEnemyScore = 0;
+	StageScoreMultiplier = 1; // Current Score Multiplier
 	StageRingStep = 60; // Ring Subtraction Timer (Used when Sonic is Super.)
-	StageClear = false;
 	
 	// Set up Checkpoint Data
 	StageCheckPointPassed = false;
 	StageCheckPointX = -1;
 	StageCheckPointY = -1;
+	
+	// End Stage Data
+	StageClear = false;
+	//StageClearRank[0] = 0;
+	//StageClearTime[0] = 0;
+	//StageClearScore[0] = 0;
+	//StageClearCharacter[0] = -1;

@@ -40,7 +40,7 @@
   "origin": 9,
   "parent": {
     "name": "Sonic",
-    "path": "folders/Sprites/Characters/Sonic.yy",
+    "path": "folders/Sprites/Characters/Playable/Sonic.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

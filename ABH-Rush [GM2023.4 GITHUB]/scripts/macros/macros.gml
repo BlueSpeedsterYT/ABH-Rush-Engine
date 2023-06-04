@@ -6,7 +6,7 @@ function macros(){
 	#macro GameData global
 	#macro GlobalGameWidth GameData.GameWidth
 	#macro GlobalGameHeight GameData.GameHeight
-	#macro GameHUD HUDType.Legacy
+	#macro GameHUD HUDType.Proto
 	enum HUDType {
 		Legacy = 0,
 		Mirai = 1,

@@ -4,8 +4,8 @@
 	window_set_caption($"{GameTitle} - {GameVersion}");
 	
 	// Set Up Game Resolutions
-	GameData.GameWidth = 240;
-	GameData.GameHeight = 160;
+	GameData.GameWidth = 456;
+	GameData.GameHeight = 256;
 
 	// Set up Game Window
 	surface_resize(application_surface, GameData.GameWidth*WindowScale, GameData.GameHeight*WindowScale);

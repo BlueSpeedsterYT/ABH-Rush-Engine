@@ -32,12 +32,12 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprPlayerMask",
-    "path": "sprites/sprPlayerMask/sprPlayerMask.yy",
+    "name": "mskPlayer",
+    "path": "sprites/mskPlayer/mskPlayer.yy",
   },
   "spriteMaskId": {
-    "name": "sprPlayerMask",
-    "path": "sprites/sprPlayerMask/sprPlayerMask.yy",
+    "name": "mskPlayer",
+    "path": "sprites/mskPlayer/mskPlayer.yy",
   },
   "visible": true,
 }

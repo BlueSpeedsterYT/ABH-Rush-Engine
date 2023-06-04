@@ -6,7 +6,7 @@ function DuckRoll(){
 	if keyDown && ground && (actionCurrent == PlayerActionNormal || actionCurrent == PlayerActionJump)
 	{
 	    if abs(speedX) < 1.03125 {
-			speedX=0; 
+			speedX = 0; 
 			actionCurrent = PlayerActionLookDown; 
 			animIndex = 0;
 		}
@@ -19,7 +19,7 @@ function DuckRoll(){
 		lookTimer += 2;
 	}
 
-	if actionCurrent == PlayerActionLookDown && !keyDown /*&& animIndex >= 5*/{
+	if actionCurrent == PlayerActionLookDown && !keyDown && animIndex >= 5{
 		actionCurrent = PlayerActionNormal;
 		lookTimer = 0;
 	}///un duck

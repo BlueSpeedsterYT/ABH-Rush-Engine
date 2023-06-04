@@ -1,5 +1,10 @@
 /// @description Init Character Code
 
+	// Set up GM Vars
+	image_speed = 0;
+	image_index = 0;
+	sprite_index = 0;
+
 	// Create Objects
 	PlayerCam = instance_create_depth(x, y, -99999, Camera); // Camera
 	StageManager = instance_create_depth(x, y, -99999, Stage); // Stage Controller
@@ -69,6 +74,7 @@
 	
 	// Effects:
 	trailStep = 0; // trail timer.
+	trailBlend = c_white; // trail color
 	dustIndex = 0; // animation index for the Spin Dash dust effect.
 	damageEffect = 0; // timer for the invincbility effect after being damaged.
 	canFootstep = false; // Allows for the footstep sounds to be used.

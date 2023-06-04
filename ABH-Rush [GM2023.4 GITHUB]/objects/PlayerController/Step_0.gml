@@ -121,8 +121,14 @@
 	    trailStep += 1
 	    if trailStep >= 7
 	    {
-	        instance_create_depth(x,y-1,0,fxTrail)
-	        trailStep = 0
+	        instance_create_depth(x, y-1, depth + 1, fxTrail);
+			switch(character){
+				case PlayerSonic:{
+					trailBlend = c_blue;
+				}
+				break;
+			}
+	        trailStep = 0;
 	    }
     
 	    if ground && trailStep == 6 && speedX != 0
