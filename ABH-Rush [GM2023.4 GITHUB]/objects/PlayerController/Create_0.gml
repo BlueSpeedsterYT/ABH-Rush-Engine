@@ -24,7 +24,7 @@
 	
 	mask = 16; // The Player's Mask (Used for collision)
 	
-	allowMovement = false; // Movement Check (Usually disabled during a Title Card.)
+	allowMovement = true; // Movement Check (Usually disabled during a Title Card.)
 	
 	speedX = 0; // Horizontal Speed
 	speedY = 0; // Vertical Speed

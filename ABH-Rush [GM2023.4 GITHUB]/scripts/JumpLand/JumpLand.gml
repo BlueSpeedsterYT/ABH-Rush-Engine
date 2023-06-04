@@ -12,10 +12,10 @@ if keyJump && ground && (actionCurrent == PlayerActionSkid || actionCurrent == P
     asin = 0;
     actionCurrent = PlayerActionJump;
     
-    //if !instance_exists(obj_jumpfx) && character != PlayerTails
-        //instance_create(x,y,obj_jumpfx)
+    //if !instance_exists(fxJump) && character != PlayerTails
+        //instance_create_depth(x,y,depth-1,fxJump)
     
-    //audio_play_sound(snd_jump,1,false);
+    //audio_play_sound(sndJump,1,false);
 }
 //small jump
 if keyJumpReleased && speedY < speedLowJump && actionCurrent == PlayerActionJump
@@ -57,7 +57,7 @@ if actionCurrent == PlayerActionJump && !ground
 }
 
 //landing
-if allowMovement && (actionCurrent != PlayerActionNormal) && actionCurrent > PlayerActionLookDown && actionCurrent != PlayerActionRoll && actionCurrent != PlayerActionCorkscrew && actionCurrent != PlayerActionRollCorkscrew && actionCurrent != PlayerActionDashPad && actionCurrent != PlayerActionSlide && actionCurrent != PlayerActionDamage && actionCurrent != PlayerActionDead && actionCurrent != PlayerActionAutoroll && ground && collision_line(x,y,x+20*asin,y+20*acos,parWalls,true,true) // (actionCurrent == PlayerActionNormal && (sprp == spr_Sonic_fall || sprp == spr_Shadow_jump) && speedY > 1)
+if allowMovement && (actionCurrent != PlayerActionNormal) && actionCurrent > PlayerActionLookDown && actionCurrent != PlayerActionRoll && actionCurrent != PlayerActionCorkscrew && actionCurrent != PlayerActionRollCorkscrew && actionCurrent != PlayerActionDashPad && actionCurrent != PlayerActionSlide && actionCurrent != PlayerActionDamage && actionCurrent != PlayerActionDead && actionCurrent != PlayerActionAutoroll && ground && collision_line(x,y,x+20*asin,y+20*acos,parWalls,true,true) // (actionCurrent == PlayerActionNormal && (animSprite == sprSonicFall || animSprite == sprShadowJump) && speedY > 1)
 {    
     //if collision_line(x,y,x,y+20,obj_glass_wall,true,true)
     //|| (collision_line(x,y,x+20*asin,y+20*acos,obj_bwalls_glass,true,true) && characterLayer == 0) 

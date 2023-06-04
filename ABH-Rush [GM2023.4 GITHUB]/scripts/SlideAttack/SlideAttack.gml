@@ -6,7 +6,7 @@ function SlideAttack(){
 	{
 	    case PlayerSonic:
 	    {
-	        if ground && actionCurrent == PlayerActionNormal && abs(speedX) >= 3 && keyAttackPressed
+	        if ground && (actionCurrent == PlayerActionNormal || actionCurrent == PlayerActionRoll) && abs(speedX) >= 3 && keyAttack
 	        {
 	            animSprite = sprSonicJog;
 	            actionCurrent = PlayerActionSlide;
@@ -26,13 +26,15 @@ function SlideAttack(){
         
 	            if abs(speedX) < 1 || !ground
 	                actionCurrent = PlayerActionNormal; 
+				if !keyAttack
+					actionCurrent = PlayerActionRoll;
 	        }
 	    }
 	    break;
     
 	    //case PlayerShadow:
 	    //{
-	    //    if ground && actionCurrent == PlayerActionNormal && keyAttackPressed
+	    //    if ground && actionCurrent == PlayerActionNormal && keyAttack
 	    //    {
 	    //        animIndex = 0
 	    //        if abs(speedX) < 10

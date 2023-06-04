@@ -6,6 +6,7 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"PlayerController","path":"objects/PlayerController/PlayerController.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -30,12 +31,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "mskSpring",
-    "path": "sprites/mskSpring/mskSpring.yy",
+    "name": "sprSpring",
+    "path": "sprites/sprSpring/sprSpring.yy",
   },
-  "spriteMaskId": {
-    "name": "mskSpring",
-    "path": "sprites/mskSpring/mskSpring.yy",
-  },
+  "spriteMaskId": null,
   "visible": true,
 }

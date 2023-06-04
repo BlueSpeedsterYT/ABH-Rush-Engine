@@ -14,6 +14,7 @@
 	        Player.animDir = 1;
 	    else if image_angle > 90 && image_angle < -90
 	        Player.animDir = -1;
+		image_speed = 0.75;
 		if image_angle == 45 || image_angle == 135
         {   
             Player.animIndex = 0;

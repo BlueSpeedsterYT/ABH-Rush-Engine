@@ -30,12 +30,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "mskDashRing",
-    "path": "sprites/mskDashRing/mskDashRing.yy",
+    "name": "sprDashRing",
+    "path": "sprites/sprDashRing/sprDashRing.yy",
   },
-  "spriteMaskId": {
-    "name": "mskDashRing",
-    "path": "sprites/mskDashRing/mskDashRing.yy",
-  },
+  "spriteMaskId": null,
   "visible": true,
 }

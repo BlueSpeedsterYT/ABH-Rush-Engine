@@ -84,6 +84,7 @@
 			}
 			break;
 		}
+		exit
 	}
 	
 	// Check Input Methods to Swap Input Types
@@ -93,7 +94,7 @@
 	    inputType = InputXbox // set input type to "InputXbox"
 		
 	// Control the Boost Energy and it's draining
-	if(form != PlayerFormNormal || Stage.StageAct == ZoneType.HUB)
+	if(form != PlayerFormNormal || Stage.StageAct == ActType.HUB)
 	{
 		boostAmount = 100;
 	}
@@ -137,6 +138,58 @@
 	    }
 	}
 	
+	// Under Water Handling:
+	
+	// Check if Player is above water.
+	if !isUnderwater && abs(speedX) >= 6 && ground && (actionCurrent == PlayerActionNormal || actionCurrent == PlayerActionJump || actionCurrent == PlayerActionRoll)
+	    aboveWater = true
+	else
+	    aboveWater = false
+		
+	// Set angle when running on water surface:
+	if collision_line(x,y,x,y+20,parWaterSurface,true,true)
+	    angle = 0
+		
+	// Change Physics:
+	if collision_point(x,y,parWater,true,true)
+	{
+	    if !isUnderwater
+	    {
+	        speedY = speedY*0.25;
+	        speedX = speedX*0.5;
+	        //audio_play_sound(snd_watersplash,1,false)
+	        accel = 0.0234375;//acceleration
+	        decel = 0.25;//deceleration
+	        fric = 0.0234375;//friction
+	        grav = 0.0625;//gravity
+	        speedJump = -3.5;//jumping speed
+	        speedLowJump = -2;//lowest jump
+	    }
+	    isUnderwater = true;
+	}
+	else 
+	{
+	    if isUnderwater
+	    {
+	        //audio_play_sound(snd_watersplashout,1,false)
+	        if grav = 0.21875 {
+	            speedY = speedY*2;
+				speedX = speedX*2;
+			}
+	        accel = 0.25;//acceleration
+	        decel = 0.5;//deceleration
+	        fric = 0.046875;//friction
+	        grav = 0.21875;//gravity
+	        speedJump = -6.5;//jumping speed
+	        speedLowJump = -4;//lowest jump
+	    }
+	    isUnderwater = false;
+	}
+
+  
+	// Generate Bubbles from the Player while Under Water.
+	if isUnderwater && choose(1,1,1,1,1,1,1,1,1,1,1,1,3) mod 3 == 0
+	    instance_create_depth(x+choose(5,7,9)*animDir,y-5,-10,objBubbles)
 	
 	// Call Physics and Player Movement Scripts
 	PlayerPhysics();

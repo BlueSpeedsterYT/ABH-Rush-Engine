@@ -6,25 +6,25 @@ if speedX == 0 && (actionCurrent <= PlayerActionNormal) && ground
 else if (animAngle != 0 && actionCurrent == PlayerActionNormal && !ground)
 {
     if animAngle mod 360 < 180   
-        animAngle -= 7
-    else if animAngle% 360 > 180
-        animAngle += 7
+        animAngle -= 7;
+    else if animAngle mod 360 > 180
+        animAngle += 7;
     else if animAngle == 180
     {
         if animDir == 1
-            animAngle += 10
+            animAngle += 10;
         else
-            animAngle -= 10
+            animAngle -= 10;
     }
     if animAngle mod 360 < 10
-        animAngle = 0
+        animAngle = 0;
 }
-//else if ground && collision_line(x,y,x,y+20,parWaterSurface,true,true) //if running on water then angle is 0
-//{
-    //animAngle = 0
-//}
+else if ground && collision_line(x,y,x,y+20,parWaterSurface,true,true) //if running on water then angle is 0
+{
+    animAngle = 0;
+}
 else
-    animAngle = angle
+    animAngle = angle;
 
 //if on the jump panel then set the angle according to jump panel's angle
 //if actionCurrent == PlayerActionPanelLand
@@ -146,22 +146,22 @@ if actionCurrent == PlayerActionSkid
     if animSprite != sprSonicBreakLow && animSprite != sprSonicBreakHigh
     {
         if abs(speedX) > 7
-            animSprite = sprSonicBreakHigh
+            animSprite = sprSonicBreakHigh;
         else if abs(speedX) <= 7
-            animSprite = sprSonicBreakLow 
+            animSprite = sprSonicBreakLow;
     }
     
     if animSprite == sprSonicBreakLow
     {
         if animIndex >= 3
-            animIndex = 1
+            animIndex = 1;
     }
     else if animSprite == sprSonicBreakHigh
     {
         if animIndex >= 6
-            animIndex = 3
+            animIndex = 3;
     }
-    animFrame += 0.35
+    animFrame += 0.35;
 }
 
 // Landing
@@ -222,6 +222,21 @@ if actionCurrent == PlayerActionDashRing
     animSprite = sprSonicWallJump;
     animFrame += 0.25;
 }
+
+// Sliding
+if actionCurrent == PlayerActionSlide && (animSprite == sprSonicFall || animSprite == sprSonicSpinAdvance || animSprite == sprSonicWalk || animSprite == sprSonicJog || animSprite == sprSonicRunSlow || animSprite == sprSonicRunFast || animSprite == sprSonicSprint)
+{   
+    animIndex = 0;
+    animSprite = sprSonicSlideStart;
+}
+if actionCurrent == PlayerActionSlide && animSprite == sprSonicSlideStart
+    animFrame += 0.5;
+    
+if actionCurrent == PlayerActionSlide && animSprite == sprSonicSlideStart && animIndex >= 3
+    animSprite = sprSonicSlide;
+    
+if actionCurrent == PlayerActionSlide && animSprite == sprSonicSlide
+    animFrame += 1/max(7-(abs(speedX)),1);
 
 // Corkscrew
 AnimSetSprite(PlayerActionCorkscrew, sprSonicCorkscrew);
