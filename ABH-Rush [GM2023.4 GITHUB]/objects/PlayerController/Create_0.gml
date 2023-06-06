@@ -18,7 +18,7 @@
 	}
 	
 	// Character Init:
-	depth = -1;
+	depth = -2;
 	character = GameData.CurrentCharacter; // Main Character
 	form = PlayerFormNormal; // Current Form
 	

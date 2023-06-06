@@ -4,8 +4,8 @@
 	window_set_caption($"{GameTitle} - {GameVersion}");
 	
 	// Set Up Game Resolutions
-	GameData.GameWidth = 456;
-	GameData.GameHeight = 256;
+	GameWidth = GlobalGameWidth;
+	GameHeight = GlobalGameHeight;
 	
 	// Set up Game Data
 	GameData.TotalRings = 0;
@@ -15,8 +15,8 @@
 	
 
 	// Set up Game Window
-	surface_resize(application_surface, GameData.GameWidth*WindowScale, GameData.GameHeight*WindowScale);
-	window_set_size(GameData.GameWidth*WindowScale, GameData.GameHeight*WindowScale);
+	surface_resize(application_surface, GameWidth*WindowScale, GameHeight*WindowScale);
+	window_set_size(GameWidth*WindowScale, GameHeight*WindowScale);
 	window_center();
 	
 	// [DEV] Set Up Some Shit

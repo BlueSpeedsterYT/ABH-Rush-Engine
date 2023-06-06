@@ -2,12 +2,12 @@
 
 	x = clamp(x, LimitLeft, LimitRight);
 	y = clamp(y, LimitTop, LimitBottom);
-	camera_set_view_size(CameraViewID, GlobalGameWidth, GlobalGameHeight);
-	camera_set_view_border(CameraViewID, GlobalGameWidth/2, GlobalGameHeight/2);
+	camera_set_view_size(CameraViewID, Display.GameWidth, Display.GameHeight);
+	camera_set_view_border(CameraViewID, Display.GameWidth/2, Display.GameHeight/2);
 
 	switch(CamType)
 	{
-		case "Mirai":
+		case CameraType.Mirai:
 		{
 			if CamFollow == true {
 				if ObjectID != noone {
@@ -42,15 +42,12 @@
 						}
 					}
 			
-					if abs(ObjectID.speedX) > 0 && (ObjectID.keyLeft || ObjectID.keyRight)
-				        CameraOffsetX = lerp(CameraOffsetX, abs(ObjectID.speedX)*ObjectID.acos*ObjectID.animDir, 0.2);
-				    else
-				    {   
-				        if abs(ObjectID.speedX) > 0
-				            CameraOffsetX = lerp(CameraOffsetX, ObjectID.animDir*CameraViewWidth/4, 0.2);
-				        else
-				            CameraOffsetX = lerp(CameraOffsetX, 0, 0.2);
-				    }
+					//if abs(ObjectID.speedX) >= 6
+				        //CameraOffsetX = lerp(CameraOffsetX, (abs(ObjectID.speedX)*ObjectID.acos)*ObjectID.animDir, 0.2);
+				    //else
+				    //{   
+				        //CameraOffsetX = lerp(CameraOffsetX, 0, 0.2);
+				    //}
 				}
 			}
 			else if Stage.StageClear {
@@ -65,7 +62,7 @@
 		}
 		break;
 		
-		case "Legacy":
+		case CameraType.Legacy:
 		{
 			if(CamFollow){
 				if(ObjectID == Player){

@@ -1,6 +1,7 @@
 /// @description Create the Afterimage Effect
 
 	image_speed = 0;
+	depth = Player.depth+1;
 	sprite_index = Player.animSprite;
 	image_index = Player.animIndex;
 	image_xscale = Player.animDir;

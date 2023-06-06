@@ -6,7 +6,7 @@
 	ShockwaveEffect = 10;
 	CamFollow = true;
 	CamFollowTimer = 0;
-	CamType = "Mirai";
+	CamType = CameraType.Legacy;
 	
 	// Camera Positions
 	CameraX = x;

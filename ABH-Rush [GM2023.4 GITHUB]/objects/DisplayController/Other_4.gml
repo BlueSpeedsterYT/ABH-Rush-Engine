@@ -3,6 +3,6 @@
 	// set up camera view size, borders and view settings
 	if !instance_exists(Player)
 	{
-		room_width = GameData.GameWidth;
-		room_height = GameData.GameHeight;
+		room_width = GameWidth;
+		room_height = GameHeight;
 	}

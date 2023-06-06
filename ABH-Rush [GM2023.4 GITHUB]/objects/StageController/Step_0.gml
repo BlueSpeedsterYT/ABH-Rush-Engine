@@ -23,7 +23,7 @@
 			case HUDType.Legacy:
 			{
 				StageHUDType = HUDType.Proto;
-				Camera.CamType = "Mirai";
+				Camera.CamType = CameraType.Mirai;
 				show_debug_message("\n[DEBUG] HUD Swapped to 'Proto'");
 			}
 			break;
@@ -31,7 +31,7 @@
 			case HUDType.Proto:
 			{
 				StageHUDType = HUDType.Legacy;
-				Camera.CamType = "Legacy";
+				Camera.CamType = CameraType.Legacy;
 				show_debug_message("\n[DEBUG] HUD Swapped to 'Legacy'");
 			}
 			break;

@@ -8,7 +8,7 @@
 		HUB = 0,
 		Act1 = 1,
 		Act2 = 2,
-		Act3 = 3,
+		Act3 = 3
 	}
 	StageAct = ActType.Act1;
 	//BestRank = GetStageRank();

@@ -177,7 +177,7 @@ if actionCurrent == PlayerActionJump && speedY > 0 && (collision_line(x,y,x,y+80
 	animFrame += 0.25;
 }
 // Roll (This uses the Advance sprite instead of the one used in ABH-Rush GMS1, it can be swapped back if you know how.)
-else if(actionCurrent == PlayerActionJump || actionCurrent == PlayerActionRoll || actionCurrent == PlayerActionAutoroll || actionCurrent == PlayerActionRollCorkscrew){
+else if(actionCurrent == PlayerActionJump || actionCurrent == PlayerActionRoll || actionCurrent == PlayerActionAutoroll || actionCurrent == PlayerActionRollCorkscrew || actionCurrent == PlayerActionDashPad){
 	animFrame += 0.25;
 	animSprite = sprSonicSpinAdvance;
 }
@@ -198,7 +198,8 @@ if actionCurrent == PlayerActionSpinCharge {
         animIndex = 4;
 }
 
-if actionCurrent == PlayerActionSpring //springjump
+// Spring
+if actionCurrent == PlayerActionSpring 
 {
     if animSprite == sprSonicJump || animSprite == sprSonicWallJump
     {
@@ -215,6 +216,26 @@ if actionCurrent == PlayerActionSpring //springjump
     }   
 }
 
+// Dash Ramp
+if(actionCurrent == PlayerActionDashRamp){
+	if speedY < 2
+    {
+        animSprite = sprSonicWallJump
+        animFrame += 0.25
+    }
+    else if speedY < 4 && speedY >= 2
+    {
+        if animSprite != sprSonicJumpEnd
+            animIndex = 0
+        animSprite = sprSonicJumpEnd;
+        animFrame += 0.25
+    }
+    else
+    {
+        animSprite = sprSonicFall
+        animFrame += 0.25
+    } 	
+}
 
 // Dash Ring
 if actionCurrent == PlayerActionDashRing
