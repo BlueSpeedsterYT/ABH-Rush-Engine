@@ -4,13 +4,7 @@
 	StageTitle = "Stage Title"; // Main Stage Name.
 	StartType = PlayerStartIdle; // How a Stage *SHOULD* start.
 	StageMission = "Mission Name"; // Mission Name.
-	enum ActType {
-		HUB = 0,
-		Act1 = 1,
-		Act2 = 2,
-		Act3 = 3
-	}
-	StageAct = ActType.Act1;
+	StageAct = StageAct1;
 	//BestRank = GetStageRank();
 	//BestTime = GetStageTime();
 	//BestScore = GetStageScore();

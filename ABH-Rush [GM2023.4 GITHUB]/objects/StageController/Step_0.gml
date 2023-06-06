@@ -15,37 +15,6 @@
 		}
 	}
 	
-	// Swap HUD Type [DEBUG]:
-	if(keyboard_check_pressed(vk_f8))
-	{
-		switch(StageHUDType)
-		{
-			case HUDType.Legacy:
-			{
-				StageHUDType = HUDType.Proto;
-				Camera.CamType = CameraType.Mirai;
-				show_debug_message("\n[DEBUG] HUD Swapped to 'Proto'");
-			}
-			break;
-			
-			case HUDType.Mirai:
-			{
-				StageHUDType = HUDType.Legacy;
-				Camera.CamType = CameraType.Legacy;
-				show_debug_message("\n[DEBUG] HUD Swapped to 'Legacy'");
-			}
-			break;
-			
-			case HUDType.Proto:
-			{
-				StageHUDType = HUDType.Mirai;
-				Camera.CamType = CameraType.Mirai;
-				show_debug_message("\n[DEBUG] HUD Swapped to 'Mirai'");
-			}
-			break;
-		}
-	}
-	
 	// Set up HUD systems
 	if(HUDShow){
 		switch(StageHUDType){

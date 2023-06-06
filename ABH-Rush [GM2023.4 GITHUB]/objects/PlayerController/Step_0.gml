@@ -95,7 +95,7 @@
 	    inputType = InputXbox // set input type to "InputXbox"
 		
 	// Control the Boost Energy and it's draining
-	if(form != PlayerFormNormal || Stage.StageAct == ActType.HUB)
+	if(form != PlayerFormNormal || Stage.StageAct == StageHUB)
 	{
 		boostAmount = 100;
 	}

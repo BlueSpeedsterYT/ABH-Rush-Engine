@@ -88,6 +88,59 @@
 		}
 		break;
 		
+		case CameraType.Proto:
+		{
+			if CamFollow == true {
+				if ObjectID != noone {
+					CameraX = lerp(CameraX, ObjectID.x, 0.2);
+					CameraY = lerp(CameraY, ObjectID.y, 0.2);
+					x = floor((CameraX+CameraOffsetX)+(ShockwaveEnabled*choose(random(ShockwaveEffect), -random(ShockwaveEffect))));
+					y = floor((CameraY+CameraOffsetY)+(ShockwaveEnabled*choose(random(ShockwaveEffect), -random(ShockwaveEffect))));
+				}
+		
+				if ObjectID == Player {
+					CameraX = clamp(CameraX, LimitLeft, LimitRight);
+					CameraY = clamp(CameraY, LimitTop, LimitBottom);
+			
+					if ObjectID.actionCurrent == PlayerActionLookUp && ObjectID.lookTimer >= 120 {
+						if CameraOffsetY > -CameraViewHeight/2 {
+							CameraOffsetY = lerp(CameraOffsetY, -CameraViewHeight/2, 0.2);
+						}
+					}
+					else if ObjectID.actionCurrent == PlayerActionLookDown && ObjectID.lookTimer >= 120 {
+						if CameraOffsetY < CameraViewHeight/2 {
+							CameraOffsetY = lerp(CameraOffsetY, CameraViewHeight/2, 0.2);
+						}
+					}
+					else{
+						if CameraOffsetY > 0 {
+							CameraOffsetY = lerp(CameraOffsetY, 0, 0.2);
+						}
+						else if CameraOffsetY < 0 {
+							CameraOffsetY = lerp(CameraOffsetY, 0, 0.2);
+						}
+					}
+			
+					//if abs(ObjectID.speedX) >= 6
+				        //CameraOffsetX = lerp(CameraOffsetX, (abs(ObjectID.speedX)*ObjectID.acos)*ObjectID.animDir, 0.2);
+				    //else
+				    //{   
+				        //CameraOffsetX = lerp(CameraOffsetX, 0, 0.2);
+				    //}
+				}
+			}
+			else if Stage.StageClear {
+				if instance_exists(Goal) {
+					ObjectID = Goal;
+					LimitLeft = ObjectID.x-CameraViewWidth/2;
+					LimitRight = ObjectID.x+CameraViewWidth/2;
+					LimitTop = ObjectID.y-CameraViewHeight/2;
+					LimitBottom = ObjectID.y+CameraViewHeight/2;
+				}
+			}
+		}
+		break;
+		
 		case CameraType.Legacy:
 		{
 			if(CamFollow){

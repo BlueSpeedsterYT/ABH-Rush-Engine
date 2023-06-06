@@ -10,7 +10,8 @@ function macros(){
 	#macro GameCamera CameraType.Mirai
 	enum CameraType {
 		Legacy = 0,
-		Mirai = 1
+		Mirai = 1,
+		Proto = 2
 	}
 	enum HUDType {
 		Legacy = 0,
@@ -38,6 +39,18 @@ function macros(){
 	#macro Stage StageController
 	#macro Goal GoalManager
 	#macro XboxRumble XboxRumbleController
+	
+	// STAGE MACROS
+	enum ActType {
+		HUB = 0,
+		Act1 = 1,
+		Act2 = 2,
+		Act3 = 3
+	}
+	#macro StageHUB ActType.HUB
+	#macro StageAct1 ActType.Act1
+	#macro StageAct2 ActType.Act2
+	#macro StageAct3 ActType.Act3
 	
 	// PLAYER ID MACROS
 	#macro PlayerSonic "Sonic"

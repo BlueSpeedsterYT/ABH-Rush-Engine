@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function SetStageName(_StageTitle = "Stage Title", _StartType = PlayerStartIdle, _StageMission = "Mission Name", _StageType = ActType.Act1){
+function SetStageName(_StageTitle = "Stage Title", _StartType = PlayerStartIdle, _StageMission = "Mission Name", _StageType = StageAct1){
 	
 	if instance_exists(Stage){
 		with (Stage){
