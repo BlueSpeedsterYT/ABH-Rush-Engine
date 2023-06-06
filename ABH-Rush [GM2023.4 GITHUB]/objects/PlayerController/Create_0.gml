@@ -22,7 +22,7 @@
 	character = GameData.CurrentCharacter; // Main Character
 	form = PlayerFormNormal; // Current Form
 	
-	mask = 16; // The Player's Mask (Used for collision)
+	mask = floor(sprite_get_width(mskPlayer)/2); // The Player's Mask (Used for collision)
 	
 	allowMovement = true; // Movement Check (Usually disabled during a Title Card.)
 	

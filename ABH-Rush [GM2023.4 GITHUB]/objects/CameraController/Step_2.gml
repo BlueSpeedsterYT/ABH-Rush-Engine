@@ -3,7 +3,7 @@
 	x = clamp(x, LimitLeft, LimitRight);
 	y = clamp(y, LimitTop, LimitBottom);
 	camera_set_view_size(CameraViewID, Display.GameWidth, Display.GameHeight);
-	camera_set_view_border(CameraViewID, Display.GameWidth/2, Display.GameHeight/2);
+	camera_set_view_border(CameraViewID, (Display.GameWidth/2), (Display.GameHeight/2));
 
 	switch(CamType)
 	{
@@ -13,15 +13,21 @@
 				if ObjectID != noone {
 					CameraX = lerp(CameraX, ObjectID.x, 0.2);
 					CameraY = lerp(CameraY, ObjectID.y, 0.2);
-					//x = lerp(x, floor((CameraX+CameraOffsetX))+((ShockwaveEnabled*choose(random(ShockwaveEffect), -random(ShockwaveEffect)))*2.5), 0.2);
-					//y = lerp(y, floor((CameraY+CameraOffsetY))+((ShockwaveEnabled*choose(random(ShockwaveEffect), -random(ShockwaveEffect)))*2.5), 0.2);
 					x = floor((CameraX+CameraOffsetX)+(ShockwaveEnabled*choose(random(ShockwaveEffect), -random(ShockwaveEffect))));
 					y = floor((CameraY+CameraOffsetY)+(ShockwaveEnabled*choose(random(ShockwaveEffect), -random(ShockwaveEffect))));
 				}
 		
 				if ObjectID == Player {
-					CameraX = clamp(CameraX, LimitLeft, LimitRight);
-					CameraY = clamp(CameraY, LimitTop, LimitBottom);
+					if (ObjectID.actionCurrent == PlayerActionQTEInit && abs(ObjectID.speedX) <= 0.625 && ObjectID.speedY <= 0.3125) && (ObjectID.actionCurrent != PlayerActionZipStart && ObjectID.actionCurrent != PlayerActionZipTravel){
+						CameraX = clamp(CameraX, LimitLeft, LimitRight);
+						CameraY = clamp(CameraY, LimitTop, LimitBottom);
+					}else if !(ObjectID.actionCurrent == PlayerActionQTEInit && abs(ObjectID.speedX) <= 0.625 && ObjectID.speedY <= 0.3125) && (ObjectID.actionCurrent == PlayerActionZipStart && ObjectID.actionCurrent == PlayerActionZipTravel){
+						CameraX = clamp(CameraX + ObjectID.hspeed*3.75, LimitLeft, LimitRight);
+						CameraY = clamp(CameraY, LimitTop, LimitBottom);
+					}else if !(ObjectID.actionCurrent == PlayerActionQTEInit && abs(ObjectID.speedX) <= 0.625 && ObjectID.speedY <= 0.3125) && (ObjectID.actionCurrent != PlayerActionZipStart && ObjectID.actionCurrent != PlayerActionZipTravel){
+						CameraX = clamp(CameraX + ObjectID.speedX*3.75*ObjectID.acos, LimitLeft, LimitRight);
+						CameraY = clamp(CameraY + ObjectID.speedY, LimitTop, LimitBottom);
+					}
 			
 					if ObjectID.actionCurrent == PlayerActionLookUp && ObjectID.lookTimer >= 120 {
 						if CameraOffsetY > -CameraViewHeight/2 {
