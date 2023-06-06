@@ -6,7 +6,8 @@
 	ShockwaveEffect = 10;
 	CamFollow = true;
 	CamFollowTimer = 0;
-	CamType = CameraType.Legacy;
+	CamType = GameCamera;
+	CamMode = 0;
 	
 	// Camera Positions
 	CameraX = x;

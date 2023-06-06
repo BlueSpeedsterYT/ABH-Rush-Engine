@@ -6,8 +6,8 @@ function macros(){
 	#macro GameData global
 	#macro GlobalGameWidth 456
 	#macro GlobalGameHeight 256
-	#macro GameHUD HUDType.Legacy
-	#macro GameCamera CameraType.Legacy
+	#macro GameHUD HUDType.Mirai
+	#macro GameCamera CameraType.Mirai
 	enum CameraType {
 		Legacy = 0,
 		Mirai = 1

@@ -28,11 +28,19 @@
 			}
 			break;
 			
-			case HUDType.Proto:
+			case HUDType.Mirai:
 			{
 				StageHUDType = HUDType.Legacy;
 				Camera.CamType = CameraType.Legacy;
 				show_debug_message("\n[DEBUG] HUD Swapped to 'Legacy'");
+			}
+			break;
+			
+			case HUDType.Proto:
+			{
+				StageHUDType = HUDType.Mirai;
+				Camera.CamType = CameraType.Mirai;
+				show_debug_message("\n[DEBUG] HUD Swapped to 'Mirai'");
 			}
 			break;
 		}

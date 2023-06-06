@@ -18,15 +18,35 @@
 				}
 		
 				if ObjectID == Player {
+					switch(CamMode)
+					{
+						case 0: // Default
+						{
+							CameraX = clamp(CameraX + ObjectID.speedX*3.75*ObjectID.acos, LimitLeft, LimitRight);
+							CameraY = clamp(CameraY + ObjectID.speedY, LimitTop, LimitBottom);
+						}
+						break;
+						
+						case 1: // Zip Line Mode
+						{
+							CameraX = clamp(CameraX + ObjectID.hspeed*3.75, LimitLeft, LimitRight);
+							CameraY = clamp(CameraY, LimitTop, LimitBottom);
+						}
+						break;
+						
+						case 2: // QTE Mode
+						{
+							CameraX = clamp(CameraX, LimitLeft, LimitRight);
+							CameraY = clamp(CameraY, LimitTop, LimitBottom);
+						}
+						break;
+					}
 					if (ObjectID.actionCurrent == PlayerActionQTEInit && abs(ObjectID.speedX) <= 0.625 && ObjectID.speedY <= 0.3125) && (ObjectID.actionCurrent != PlayerActionZipStart && ObjectID.actionCurrent != PlayerActionZipTravel){
-						CameraX = clamp(CameraX, LimitLeft, LimitRight);
-						CameraY = clamp(CameraY, LimitTop, LimitBottom);
+						CamMode = 2;
 					}else if !(ObjectID.actionCurrent == PlayerActionQTEInit && abs(ObjectID.speedX) <= 0.625 && ObjectID.speedY <= 0.3125) && (ObjectID.actionCurrent == PlayerActionZipStart && ObjectID.actionCurrent == PlayerActionZipTravel){
-						CameraX = clamp(CameraX + ObjectID.hspeed*3.75, LimitLeft, LimitRight);
-						CameraY = clamp(CameraY, LimitTop, LimitBottom);
+						CamMode = 1;
 					}else if !(ObjectID.actionCurrent == PlayerActionQTEInit && abs(ObjectID.speedX) <= 0.625 && ObjectID.speedY <= 0.3125) && (ObjectID.actionCurrent != PlayerActionZipStart && ObjectID.actionCurrent != PlayerActionZipTravel){
-						CameraX = clamp(CameraX + ObjectID.speedX*3.75*ObjectID.acos, LimitLeft, LimitRight);
-						CameraY = clamp(CameraY + ObjectID.speedY, LimitTop, LimitBottom);
+						CamMode = 0;
 					}
 			
 					if ObjectID.actionCurrent == PlayerActionLookUp && ObjectID.lookTimer >= 120 {
