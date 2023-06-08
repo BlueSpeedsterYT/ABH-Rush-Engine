@@ -17,5 +17,8 @@ function ColScriptGround(_Mask){
 	if allowGrinding && collision_circle(x-asin*(mask*multiply),y+acos*(mask*multiply),radius,parRails,true,true)
 		return true;
 
+	if platformCheck && collision_circle(x-asin*(mask*multiply),y+acos*(mask*multiply),radius,parPlatforms,true,true) 
+		return true;
+
 	return false;
 }

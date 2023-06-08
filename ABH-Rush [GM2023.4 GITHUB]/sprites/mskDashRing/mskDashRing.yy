@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "Test Objects",
-    "path": "folders/Sprites/Zone/Test Objects.yy",
+    "path": "folders/Sprites/Level Objects/Test Objects.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

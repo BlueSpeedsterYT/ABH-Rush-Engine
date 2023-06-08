@@ -44,7 +44,7 @@
 	if(actionCurrent == PlayerActionSpinCharge)
 		draw_sprite_ext(sprSpindashDust, dustIndex, x, y - animYPosDraw, animDir, 1, animAngle, c_white, animAlpha)
     
-	// Draw Tails'... Something:
+	// Draw Tails' Flight Timer:
 	// [NOTE] UNCOMMENT THE CODE ONCE YOU ADDED IN TAILS TO YOUR GAME
 	//if character == PlayerTails && actionCurrent == PlayerActionHomingTarget
 	//{

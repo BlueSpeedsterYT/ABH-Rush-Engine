@@ -28,7 +28,12 @@ function DuckRoll(){
 		actionCurrent = PlayerActionNormal;
 	}///un roll
 	
-	if actionCurrent == PlayerActionRoll && speedY > 0 && !ground && ColScriptGround(mask){
+	if actionCurrent == PlayerActionRoll && keyAttackPressed && ground {
+		SlideTimeOut(60);
+		actionCurrent = PlayerActionNormal;
+	}///un roll
+	
+	if actionCurrent == PlayerActionRoll && speedY > 0 && !ground && ColScriptGround(13){
 		actionCurrent = PlayerActionNormal;
 	}//un roll on ground
 

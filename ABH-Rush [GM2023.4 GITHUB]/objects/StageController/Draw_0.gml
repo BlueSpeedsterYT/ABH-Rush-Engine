@@ -13,7 +13,7 @@
 				draw_set_color(c_white);
 				draw_set_alpha(HUDAlpha);
 				draw_text(CameraViewX+16, CameraViewY+16, $"RINGS: {StringNumberZero(StageRings, 3)}");
-				draw_text(CameraViewX+CameraViewWidth-16-string_width($"LIVES: {StringNumberZero(StageLives, 2)}"), CameraViewY+16, $"LIVES: {StringNumberZero(StageLives, 2)}");
+				draw_text(CameraViewX+CameraViewWidth-16-string_width($"LIVES: {StringNumberZero(GameData.StageLives, 2)}"), CameraViewY+16, $"LIVES: {StringNumberZero(GameData.StageLives, 2)}");
 				var i = 0;
 				repeat(2)
 				{
@@ -36,8 +36,8 @@
 			draw_set_font(_LegacyFont);
 			//draw_set_alpha(HUDAlpha);
 			//if(HUDShow){
-				draw_sprite(sprLivesAmountLegacy, 0, CameraViewX+xHUD2+CameraViewWidth-string_width(StringNumberZero(StageLives, 2))-56, CameraViewY+20);
-				draw_text(CameraViewX+xHUD2+CameraViewWidth-25-string_width(StringNumberZero(StageLives, 2)), CameraViewY+22, $"{StringNumberZero(StageLives, 2)}");
+				draw_sprite(sprLivesAmountLegacy, 0, CameraViewX+xHUD2+CameraViewWidth-string_width(StringNumberZero(GameData.StageLives, 2))-56, CameraViewY+20);
+				draw_text(CameraViewX+xHUD2+CameraViewWidth-25-string_width(StringNumberZero(GameData.StageLives, 2)), CameraViewY+22, $"{StringNumberZero(GameData.StageLives, 2)}");
 				draw_sprite(sprTimeAmountLegacy, 0, CameraViewX+xHUD+26, CameraViewY+20);
 				draw_text(CameraViewX+xHUD+55, CameraViewY+22, StageTime);
 				draw_sprite(sprRingAmountLegacy, 0, CameraViewX+xHUD+26, CameraViewY+45);
@@ -62,7 +62,7 @@
 			draw_set_valign(fa_top);
 			draw_set_color(c_white);
 			draw_text(CameraViewX+16, CameraViewY+16, $"RINGS: {StringNumberZero(StageRings, 3)}");
-			draw_text(CameraViewX+CameraViewWidth-16-string_width($"LIVES: {StringNumberZero(StageLives, 2)}"), CameraViewY+16, $"LIVES: {StringNumberZero(StageLives, 2)}");
+			draw_text(CameraViewX+CameraViewWidth-16-string_width($"LIVES: {StringNumberZero(GameData.StageLives, 2)}"), CameraViewY+16, $"LIVES: {StringNumberZero(GameData.StageLives, 2)}");
 			var i = 0;
 			repeat(2)
 			{

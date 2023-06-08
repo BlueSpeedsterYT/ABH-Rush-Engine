@@ -35,6 +35,7 @@ function macros(){
 	#macro Audio AudioController
 	#macro Background BackgroundController
 	#macro Display DisplayController
+	#macro QTE QTEController
 	#macro Camera CameraController
 	#macro Stage StageController
 	#macro Goal GoalManager
@@ -47,10 +48,17 @@ function macros(){
 		Act2 = 2,
 		Act3 = 3
 	}
+	
+	enum StageVersion {
+		Normal = 0,
+		EX = 1
+	}
 	#macro StageHUB ActType.HUB
 	#macro StageAct1 ActType.Act1
 	#macro StageAct2 ActType.Act2
 	#macro StageAct3 ActType.Act3
+	#macro StageNormal StageVersion.Normal
+	#macro StageEX StageVersion.EX
 	
 	// PLAYER ID MACROS
 	#macro PlayerSonic "Sonic"

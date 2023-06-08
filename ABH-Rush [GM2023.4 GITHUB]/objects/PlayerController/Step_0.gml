@@ -1,6 +1,19 @@
 /// @description Set Up Character Code
 
-	// Set Up Custom Alarms 5 to 8:
+	// Set Up Sliding Timer:
+	if(slidingTimer > 0){
+		slidingTimer -= 1;
+		if(slidingTimer == 1){
+			allowSliding = true;
+		}
+	}
+
+	// Set Up Platform Check:
+	if (!ground){
+		platformCheck = false;
+	}
+
+	// Set Up Custom Alarms 0 to 8:
 	if(newAlarm[0] > 0) // Reset Gravity
 	{
 		newAlarm[0] -= 1;
@@ -143,9 +156,9 @@
 	
 	// Check if Player is above water.
 	if !isUnderwater && abs(speedX) >= 6 && ground && (actionCurrent == PlayerActionNormal || actionCurrent == PlayerActionJump || actionCurrent == PlayerActionRoll)
-	    aboveWater = true
+	    aboveWater = true;
 	else
-	    aboveWater = false
+	    aboveWater = false;
 		
 	// Set angle when running on water surface:
 	if collision_line(x,y,x,y+20,parWaterSurface,true,true)
@@ -197,13 +210,7 @@
 	
 	if(!StageManager.StageClear)
 	{
-		// UNCOMMENT THE TAILS CHECKS IF HE IS IN THE GAME AND THAT THE "TailsMovement" SCRIPT IS ADDED.
-		//if(character != PlayerTails)
-		//{
-			PlayerMovement();
-		//}else{
-			//TailsMovement();
-		//}
+		PlayerMovement();
 	}
 	else
 	{
@@ -212,6 +219,36 @@
 		if(abs(speedX) < 9)
 			speedX += accel;
 	}
+	
+	// Swapping Layers:
+	// Layer BG:
+	if collision_circle(x,y,17,trgLayerBG,true,false)
+	{
+	    characterLayer = 0;
+	}
+
+	// Layer FG:
+	if collision_circle(x,y,17,trgLayerFG,true,false)
+	{
+	    characterLayer = 1;
+	}
+
+	// Swap Layers.
+	if collision_circle(x,y,17,trgLayerSwap,true,false)
+	{
+	    if speedX > 0 && ground 
+	        characterLayer = 1;
+	    if speedX < 0 && ground
+	        characterLayer = 0;
+	}
+
+	//if collision_circle(x,y,17,trgLayerSwap2,true,false)
+	//{
+	//    if speedX > 0 && ground 
+	//        characterLayer = 0;
+	//    if speedX < 0 && ground
+	//        characterLayer = 1;
+	//}
 	
 	// Invincible after Damage.
 	if damageEffect > 0 
@@ -222,4 +259,4 @@
 	}
 	
 	// Clamp Player X Area to avoid going out of bounds
-	x = clamp(x, PlayerCam.LimitLeft+32, PlayerCam.LimitRight-32);
+	x = clamp(x, PlayerCam.LimitLeft+16, PlayerCam.LimitRight-16);

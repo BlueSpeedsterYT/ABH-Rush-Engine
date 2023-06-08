@@ -10,8 +10,8 @@
     "path": "folders/Objects/Test Zone.yy",
   },
   "parentObjectId": {
-    "name": "parWalls",
-    "path": "objects/parWalls/parWalls.yy",
+    "name": "parBGWalls",
+    "path": "objects/parBGWalls/parBGWalls.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

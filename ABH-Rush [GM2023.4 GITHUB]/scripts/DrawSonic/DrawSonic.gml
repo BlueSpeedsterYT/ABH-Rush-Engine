@@ -180,6 +180,7 @@ if actionCurrent == PlayerActionJump && speedY > 0 && (collision_line(x,y,x,y+80
 else if(actionCurrent == PlayerActionJump || actionCurrent == PlayerActionRoll || actionCurrent == PlayerActionAutoroll || actionCurrent == PlayerActionRollCorkscrew || actionCurrent == PlayerActionDashPad){
 	animFrame += 0.25;
 	animSprite = sprSonicSpinAdvance;
+	//animAngle = 0;
 }
 
 // Anim Speed for Landing
@@ -258,6 +259,56 @@ if actionCurrent == PlayerActionSlide && animSprite == sprSonicSlideStart && ani
     
 if actionCurrent == PlayerActionSlide && animSprite == sprSonicSlide
     animFrame += 1/max(7-(abs(speedX)),1);
+
+// Player Trick
+if actionCurrent == PlayerActionTrick
+{
+    if animIndex >= 9
+    {
+        actionCurrent = PlayerActionNormal;
+        homingDash = true;
+    }
+    animFrame += 0.25;
+}
+
+// Grinding
+if actionCurrent == PlayerActionGrind && ground 
+{
+    if abs(speedX) < 8.5
+        animSprite = sprSonicGrind;
+    else
+        animSprite = sprSonicGrindFast;
+    animFrame += 0.5;
+}
+
+// QTE (Init):
+if actionCurrent == PlayerActionQTEInit
+{
+    animSprite = sprSonicJump;
+    animFrame += 0.25;
+}
+
+
+// QTE (Successful):
+if actionCurrent == PlayerActionQTESuccess
+{
+    animSprite = sprSonicQTETrick2;
+    animFrame += 0.35;
+    if animIndex >= 22
+        actionCurrent = PlayerActionNormal;
+}
+
+// QTE (Failure):
+if actionCurrent == PlayerActionQTEFailure
+{
+    animSprite = sprSonicQTEFail;
+    if animIndex <= 3
+        animFrame += 0.15;
+    else
+        animFrame += 0.25;
+    if animIndex >= 7
+        animIndex = 5;
+}
 
 // Corkscrew
 AnimSetSprite(PlayerActionCorkscrew, sprSonicCorkscrew);

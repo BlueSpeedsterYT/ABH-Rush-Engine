@@ -10,11 +10,9 @@
 	StageManager = instance_create_depth(x, y, -99999, Stage); // Stage Controller
 	
 	// Set up Checkpoint system
-	if instance_exists(StageManager) { // Check if Stage Controller is available
-		if StageManager.StageCheckPointPassed == true { //if the checkpoint check returns true.
-			x = StageManager.StageCheckPointX; // set Player's X to the Checkpoint's X
-			y = StageManager.StageCheckPointY; // set Player's Y to the Checkpoint's Y
-		}
+	if GameData.StageCheckPointPassed == true { //if the checkpoint check returns true.
+		x = GameData.StageCheckPointX; // set Player's X to the Checkpoint's X
+		y = GameData.StageCheckPointY; // set Player's Y to the Checkpoint's Y
 	}
 	
 	// Character Init:
@@ -25,6 +23,8 @@
 	mask = floor(sprite_get_width(mskPlayer)/2); // The Player's Mask (Used for collision)
 	
 	allowMovement = true; // Movement Check (Usually disabled during a Title Card.)
+	
+	platformCheck = false; // Checks if the player is in a platform
 	
 	speedX = 0; // Horizontal Speed
 	speedY = 0; // Vertical Speed
@@ -59,7 +59,7 @@
 	// Actions:
 	boostAmount = 100; // Amount of Boost Energy left.
 	isBoosting = false; // Checks if the Player is currently Boosting.
-	allowBoost = true; // Checks if the Player can even Boost at *ALL*
+	allowBoost = true; // Checks if the Player can even Boost at *ALL* (Unused, could be useful in some form)
 	spindashEnergy = 0; // The energy used to charge a Spin Dash.
 	isHit = true; // Checks if the Player is hurt by... Something?
 	wallJumpOff = false; // Allows the Player to jump off a wall (Used for Wall Jump).
@@ -72,6 +72,8 @@
 	speedZip = 0; // The speed gotten from the Zipline.
 	lookTimer = 0; // Look Timer, Used for the Camera.
 	allowStomp = true; // Allows the Player to Stomp.
+	allowSliding = true; // Allows the Player to Slide.
+	slidingTimer = 0; // Time left to reenable the slide
 	
 	// Effects:
 	trailStep = 0; // trail timer.

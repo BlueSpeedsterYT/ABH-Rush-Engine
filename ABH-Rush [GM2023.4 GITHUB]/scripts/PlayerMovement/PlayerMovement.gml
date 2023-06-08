@@ -32,6 +32,12 @@ function PlayerMovement(){
 	// [SONIC AND SHADOW ONLY] Slide Attack:
 	SlideAttack();
 	
+	// Grinding:
+	Grinding();
+	
+	// QTE System:
+	QTESystem();
+	
 	// [SONIC AND SHADOW ONLY] Stomp Attack:
 	StompAttack();
 	

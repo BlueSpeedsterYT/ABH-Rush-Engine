@@ -15,6 +15,9 @@ function ColScriptRightLine(_Mask){
 	
 	if allowGrinding && collision_line(x+(acos*mask)+(asin*mask)+lengthdir_y(8, angle),y-(asin*mask)+(acos*mask)-lengthdir_y(8, angle-90),x+(acos*mask)+(asin*line),y-(asin*mask)+(acos*line),parRails,true,true)
 		return true;
+		
+	if platformCheck && collision_line(x+(acos*mask)+(asin*mask)+lengthdir_y(8, angle),y-(asin*mask)+(acos*mask)-lengthdir_y(8, angle-90),x+(acos*mask)+(asin*line),y-(asin*mask)+(acos*line),parPlatforms,true,true) 
+		return true;
 
 	return false;
 }

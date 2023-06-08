@@ -62,8 +62,8 @@
 	}
 	
 	// Restart Room
-	if(keyboard_check_pressed(ord("R")) && StageLives > 0){
-		//GameData.CurrentLivesCount -= 1;
+	if(keyboard_check_pressed(ord("R")) && GameData.StageLives > 0){
+		GameData.StageLives -= 1;
 		room_restart();
 	}
 	

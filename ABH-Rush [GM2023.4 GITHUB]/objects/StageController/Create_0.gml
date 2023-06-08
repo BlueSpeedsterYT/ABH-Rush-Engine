@@ -5,6 +5,7 @@
 	StartType = PlayerStartIdle; // How a Stage *SHOULD* start.
 	StageMission = "Mission Name"; // Mission Name.
 	StageAct = StageAct1;
+	StageType = StageNormal;
 	//BestRank = GetStageRank();
 	//BestTime = GetStageTime();
 	//BestScore = GetStageScore();
@@ -24,17 +25,17 @@
 	StageTimeLimit = 5999999;
 	CountdownTimer = 0;
 	StageTimer = 0; // Current Stage Timer.
-	StageLives = GameData.CurrentLivesCount; // Current Stage Lives.
-	StageScore = 0; // Current Stage Score.
-	StageRingScore = 0;
-	StageEnemyScore = 0;
-	StageScoreMultiplier = 1; // Current Score Multiplier
+	GameData.StageLives = GameData.CurrentLivesCount; // Current Stage Lives.
+	GameData.StageScore = 0; // Current Stage Score.
+	GameData.StageRingScore = 0;
+	GameData.StageEnemyScore = 0;
+	GameData.StageScoreMultiplier = 1; // Current Score Multiplier
 	StageRingStep = 60; // Ring Subtraction Timer (Used when Sonic is Super.)
 	
 	// Set up Checkpoint Data
-	StageCheckPointPassed = false;
-	StageCheckPointX = -1;
-	StageCheckPointY = -1;
+	GameData.StageCheckPointPassed = false;
+	GameData.StageCheckPointX = -1;
+	GameData.StageCheckPointY = -1;
 	
 	// End Stage Data
 	StageClear = false;

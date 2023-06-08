@@ -6,7 +6,7 @@ function SlideAttack(){
 	{
 	    case PlayerSonic:
 	    {
-	        if ground && (actionCurrent == PlayerActionNormal || actionCurrent == PlayerActionRoll) && abs(speedX) >= 3 && keyAttack
+	        if ground && actionCurrent == PlayerActionNormal && abs(speedX) >= 3 && keyAttackPressed && allowSliding
 	        {
 	            animSprite = sprSonicJog;
 	            actionCurrent = PlayerActionSlide;
@@ -24,10 +24,10 @@ function SlideAttack(){
 	            if speedX < 0 
 	                speedX += fric;
         
-	            if abs(speedX) < 1 || !ground
+	            if abs(speedX) < 1 || !ground {
 	                actionCurrent = PlayerActionNormal; 
-				if !keyAttack
-					actionCurrent = PlayerActionRoll;
+					SlideTimeOut(60);
+				}
 	        }
 	    }
 	    break;
