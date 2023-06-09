@@ -242,13 +242,13 @@
 	        characterLayer = 0;
 	}
 
-	//if collision_circle(x,y,17,trgLayerSwap2,true,false)
-	//{
-	//    if speedX > 0 && ground 
-	//        characterLayer = 0;
-	//    if speedX < 0 && ground
-	//        characterLayer = 1;
-	//}
+	if collision_circle(x,y,17,trgLayerSwap2,true,false)
+	{
+	    if speedX > 0 && ground 
+	        characterLayer = 0;
+	    if speedX < 0 && ground
+	        characterLayer = 1;
+	}
 	
 	// Invincible after Damage.
 	if damageEffect > 0 

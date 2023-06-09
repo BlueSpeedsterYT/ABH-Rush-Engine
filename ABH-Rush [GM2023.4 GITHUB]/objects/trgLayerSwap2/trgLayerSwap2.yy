@@ -1,15 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "GoalManager",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-  ],
+  "name": "trgLayerSwap2",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Goal",
-    "path": "folders/Objects/Level Objects/The Main Stuff/Goal.yy",
+    "name": "Triggers",
+    "path": "folders/Objects/Level Objects/Level Design Help/Triggers.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -27,7 +25,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "sprLayerSwapper2",
+    "path": "sprites/sprLayerSwapper2/sprLayerSwapper2.yy",
+  },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

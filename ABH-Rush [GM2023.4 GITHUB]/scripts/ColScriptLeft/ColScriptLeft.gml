@@ -15,8 +15,5 @@ function ColScriptLeft(_Mask){
 	if collision_circle(x-(acos*mask)-asin*2,y+(asin*mask)-acos*2,3,parRails,true,true) && allowGrinding && angle == 0 
 		return true;
 
-	if collision_circle(x-(acos*mask)-asin*2,y+(asin*mask)-acos*2,3,parPlatforms,true,true) && platformCheck
-		return true;
-
 	return false;
 }

@@ -15,7 +15,7 @@ function ColScriptMain(_Mask){
 	if allowGrinding && collision_circle(x,y,mask,parRails,true,true)
 		return true;
 
-	if platformCheck && collision_circle(x,y,mask,parPlatforms,true,true) 
+	if collision_circle(x,y,mask,parPlatforms,true,true) 
 		return true;
 
 	return false;

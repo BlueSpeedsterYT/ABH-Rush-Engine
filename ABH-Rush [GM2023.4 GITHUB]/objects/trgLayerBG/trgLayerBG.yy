@@ -30,5 +30,5 @@
     "path": "sprites/sprLayerBG/sprLayerBG.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }
