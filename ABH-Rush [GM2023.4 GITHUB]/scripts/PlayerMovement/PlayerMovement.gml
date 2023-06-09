@@ -41,6 +41,9 @@ function PlayerMovement(){
 	// [SONIC AND SHADOW ONLY] Stomp Attack:
 	StompAttack();
 	
+	// Zipline:
+	Zipline();
+	
 	// Auto Tunnel:
 	AutoTunnel();
 }

@@ -316,4 +316,10 @@ AnimSetSprite(PlayerActionCorkscrew, sprSonicCorkscrew);
 // Stomp
 AnimSetSimple(PlayerActionStomp, sprSonicStomp, 0.5);
 
+// Pulley/Zipline
+if(actionCurrent == PlayerActionPulley || actionCurrent == PlayerActionPull || actionCurrent == PlayerActionZipStart || actionCurrent == PlayerActionZipTravel){
+	animSprite = sprSonicGrab;
+	animFrame += 0.125;
+}
+
 }
