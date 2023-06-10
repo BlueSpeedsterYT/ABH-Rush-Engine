@@ -8,39 +8,33 @@
 		qteTimer -= 1;
 		if(qteTimer == 1){
 			switch(rampType){
-				case 0:
-				{
-					qteObject.QTEType = -1;
-				}
-				break;
-				
 				case 1:
 				{
-					qteObject.QTEType = 1;
+					instance_create_depth(x, y, -100, qteType1);
 				}
 				break;
 				
 				case 2:
 				{
-					qteObject.QTEType = 2;
+					instance_create_depth(x, y, -100, qteType2);
 				}
 				break;
 				
 				case 3:
 				{
-					qteObject.QTEType = 3;
+					instance_create_depth(x, y, -100, qteType3);
 				}
 				break;
 				
 				case 3.1:
 				{
-					qteObject.QTEType = 3.1;
+					instance_create_depth(x, y, -100, qteType3Hard);
 				}
 				break;
 				
 				case 3.2:
 				{
-					qteObject.QTEType = 3.2;
+					instance_create_depth(x, y, -100, qteType3Expert);
 				}
 				break;
 			}

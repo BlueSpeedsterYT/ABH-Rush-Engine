@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "In stage HUD",
-    "path": "folders/Sprites/GUI/In stage HUD.yy",
+    "name": "Legacy",
+    "path": "folders/Sprites/GUI/In stage HUD/Legacy.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

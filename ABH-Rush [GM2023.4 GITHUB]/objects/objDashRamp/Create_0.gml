@@ -5,4 +5,4 @@
 	forcePower = 6;
 	rampType = 0;
 	qteTimer = 0;
-	qteObject = instance_create_depth(x, y, -99999, QTE);
+	

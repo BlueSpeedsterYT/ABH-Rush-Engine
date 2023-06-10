@@ -25,6 +25,8 @@ while(i > 0)
 	{
 		if collision_point(x1,y1,parWalls,true,true)
 			done1 = true;
+		if collision_point(x1,y1,parPlatforms,true,true)
+			done1 = true;
 		if characterLayer == 0 && collision_point(x1,y1,parBGWalls,true,true)
 			done1 = true;
 		if characterLayer == 1 && collision_point(x1,y1,parFGWalls,true,true)
@@ -39,6 +41,8 @@ while(i > 0)
 	if !done2
 	{
 		if collision_point(x2,y2,parWalls,true,true)
+			done2 = true;
+		if collision_point(x2,y2,parPlatforms,true,true)
 			done2 = true;
 		if characterLayer == 0 && collision_point(x2,y2,parBGWalls,true,true)
 			done2 = true;

@@ -19,7 +19,7 @@ else if (animAngle != 0 && actionCurrent == PlayerActionNormal && !ground)
     if animAngle mod 360 < 10
         animAngle = 0;
 }
-else if ground && collision_line(x,y,x,y+20,parWaterSurface,true,true) //if running on water then angle is 0
+else if ground && (collision_line(x,y,x,y+20,parWaterSurface,true,true) || collision_line(x,y,x,y+20,objBridgeNode,true,true)) //if running on water/bridge then angle is 0
 {
     animAngle = 0;
 }

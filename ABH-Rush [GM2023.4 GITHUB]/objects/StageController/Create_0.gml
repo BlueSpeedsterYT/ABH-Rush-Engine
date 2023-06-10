@@ -32,7 +32,7 @@
 	GameData.StageScoreMultiplier = 1; // Current Score Multiplier
 	StageRingStep = 60; // Ring Subtraction Timer (Used when Sonic is Super.)
 	
-	// Set up Checkpoint Data
+	// Set up Checkpoint Data:
 	GameData.StageCheckPointPassed = false;
 	GameData.StageCheckPointX = -1;
 	GameData.StageCheckPointY = -1;

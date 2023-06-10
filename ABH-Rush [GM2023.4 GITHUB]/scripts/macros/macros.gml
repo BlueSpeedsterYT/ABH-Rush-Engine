@@ -35,9 +35,9 @@ function macros(){
 	#macro Audio AudioController
 	#macro Background BackgroundController
 	#macro Display DisplayController
-	#macro QTE QTEController
 	#macro Camera CameraController
 	#macro Stage StageController
+	#macro QTEResult QTEMessageController
 	#macro Goal GoalManager
 	#macro XboxRumble XboxRumbleController
 	

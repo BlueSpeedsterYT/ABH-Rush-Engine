@@ -15,6 +15,9 @@ function ColScriptMain(_Mask){
 	if allowGrinding && collision_circle(x,y,mask,parRails,true,true)
 		return true;
 
+	if !isUnderwater && aboveWater && collision_circle(x,y,mask,parWaterSurface,true,true) 
+		return true;
+
 	if collision_circle(x,y,mask,parPlatforms,true,true) 
 		return true;
 
