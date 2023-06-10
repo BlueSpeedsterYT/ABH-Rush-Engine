@@ -22,7 +22,7 @@
 	
 	mask = floor(sprite_get_width(mskPlayer)/2); // The Player's Mask (Used for collision)
 	
-	allowMovement = true; // Movement Check (Usually disabled during a Title Card.)
+	allowMovement = false; // Movement Check (Usually disabled during a Title Card.)
 	
 	platformCheck = false; // Checks if the player is in a platform
 	

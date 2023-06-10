@@ -161,8 +161,8 @@
 	    aboveWater = false;
 		
 	// Set angle when running on water surface:
-	if collision_line(x,y,x,y+20,parWaterSurface,true,true)
-	    angle = 0
+	if (collision_line(x,y,x,y+20,parWaterSurface,true,true) || collision_line(x,y,x,y+20,parBridge,true,true))
+	    angle = 0;
 		
 	// Change Physics:
 	if collision_point(x,y,parWater,true,true)
@@ -178,8 +178,8 @@
 	        grav = 0.0625;//gravity
 	        speedJump = -3.5;//jumping speed
 	        speedLowJump = -2;//lowest jump
+			isUnderwater = true;
 	    }
-	    isUnderwater = true;
 	}
 	else 
 	{
@@ -196,8 +196,8 @@
 	        grav = 0.21875;//gravity
 	        speedJump = -6.5;//jumping speed
 	        speedLowJump = -4;//lowest jump
+			isUnderwater = false;
 	    }
-	    isUnderwater = false;
 	}
 
   

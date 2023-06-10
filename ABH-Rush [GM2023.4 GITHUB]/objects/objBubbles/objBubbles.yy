@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bubble",
-    "path": "sprites/spr_bubble/spr_bubble.yy",
+    "name": "sprBubble",
+    "path": "sprites/sprBubble/sprBubble.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -6,25 +6,31 @@
 	StageMission = "Mission Name"; // Mission Name.
 	StageAct = StageAct1;
 	StageType = StageNormal;
+	TitleBGM = "DUMMY";
+	SourceBGM = "DUMMY";
 	//BestRank = GetStageRank();
 	//BestTime = GetStageTime();
 	//BestScore = GetStageScore();
 	//BestCharacter = GetStageCharacter();
 	
+	// Create Title Card:
+	instance_create_depth(x, y, -999999, uiTitleCard);
+	
 	// Set up Gameplay Data:
 	StageHUDType = GameHUD;
 	StageRings = 0; // Current Ring Count.
-	HUDShow = true;
+	HUDShow = false;
 	HUDAlpha = 0;
 	xHUD = -CameraViewWidth/2;
 	xHUD2 = CameraViewWidth/2;
 	yHUD = -CameraViewHeight/2;
 	yHUD2 = CameraViewHeight/2;
-	EnableTimer = true; // Enables the Stage Timer.
+	EnableTimer = false; // Enables the Stage Timer.
 	isCountDown = false; // Is the stage using a Countdown timer.
 	StageTimeLimit = 5999999;
 	CountdownTimer = 0;
 	StageTimer = 0; // Current Stage Timer.
+	ObjectTimer = 0; // Object Timer.
 	GameData.StageLives = GameData.CurrentLivesCount; // Current Stage Lives.
 	GameData.StageScore = 0; // Current Stage Score.
 	GameData.StageRingScore = 0;

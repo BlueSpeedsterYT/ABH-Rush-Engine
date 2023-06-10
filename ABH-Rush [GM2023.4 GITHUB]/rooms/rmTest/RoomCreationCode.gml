@@ -1,4 +1,4 @@
 
 	// Set Up Stage Data.
-	SetStageName("Test Void", PlayerStartIdle, "Have Fun!", StageHUB);
-	PlayBGM(bgmSonicBattleEmerlTheme, (673792/44100), (4346134/44100));
+	SetStageName("Test Void", PlayerStartIdle, "Have Fun!", StageAct1);
+	RandomizedTestMusicPlay(choose(0, 1));

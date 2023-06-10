@@ -15,6 +15,9 @@
 		}
 	}
 	
+	// Set up Object Timer:
+	ObjectTimer += 1000/60;
+	
 	// Set up HUD systems
 	if(HUDShow){
 		switch(StageHUDType){
