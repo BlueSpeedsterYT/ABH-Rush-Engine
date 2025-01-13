@@ -86,7 +86,7 @@ if actionCurrent == PlayerActionNormal && ground
         //else
         //    audio_play_sound(snd_skidhigh,1,0)
         actionCurrent = PlayerActionSkid;
-        animIndex = 0;
+        image_index = 0;
          
     }
 }

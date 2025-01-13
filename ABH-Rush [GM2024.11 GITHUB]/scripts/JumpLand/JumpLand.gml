@@ -57,7 +57,7 @@ if actionCurrent == PlayerActionJump && !ground
 }
 
 //landing
-if allowMovement && (actionCurrent != PlayerActionNormal) && actionCurrent > PlayerActionLookDown && actionCurrent != PlayerActionRoll && actionCurrent != PlayerActionCorkscrew && actionCurrent != PlayerActionRollCorkscrew && actionCurrent != PlayerActionDashPad && actionCurrent != PlayerActionSlide && actionCurrent != PlayerActionDamage && actionCurrent != PlayerActionDead && actionCurrent != PlayerActionAutoroll && ground && collision_line(x,y,x+20*asin,y+20*acos,parWalls,true,true) // (actionCurrent == PlayerActionNormal && (animSprite == sprSonicFall || animSprite == sprShadowJump) && speedY > 1)
+if allowMovement && (actionCurrent != PlayerActionNormal) && actionCurrent > PlayerActionLookDown && actionCurrent != PlayerActionRoll && actionCurrent != PlayerActionCorkscrew && actionCurrent != PlayerActionRollCorkscrew && actionCurrent != PlayerActionDashPad && actionCurrent != PlayerActionSlide && actionCurrent != PlayerActionDamage && actionCurrent != PlayerActionDead && actionCurrent != PlayerActionAutoroll && ground && collision_line(x,y,x+20*asin,y+20*acos,parWalls,true,true) // (actionCurrent == PlayerActionNormal && (sprite_index == sprSonicFall || sprite_index == sprShadowJump) && speedY > 1)
 {    
     //if collision_line(x,y,x,y+20,obj_glass_wall,true,true)
     //|| (collision_line(x,y,x+20*asin,y+20*acos,obj_bwalls_glass,true,true) && characterLayer == 0) 

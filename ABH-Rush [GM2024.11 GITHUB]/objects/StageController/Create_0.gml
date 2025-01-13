@@ -42,6 +42,7 @@
 	GameData.StageCheckPointPassed = false;
 	GameData.StageCheckPointX = -1;
 	GameData.StageCheckPointY = -1;
+	GameData.StageCheckPointTime = -1;
 	
 	// End Stage Data
 	StageClear = false;

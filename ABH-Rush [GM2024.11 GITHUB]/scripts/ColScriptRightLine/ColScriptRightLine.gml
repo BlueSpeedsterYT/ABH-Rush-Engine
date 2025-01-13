@@ -1,26 +1,20 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function ColScriptRightLine(_Mask){
-	mask = _Mask;
-	line = floor(mask*3.5);
+	var _line_length = floor(_Mask * 3.5);
+	var _mask_with_acos = acos * _Mask;
+	var _mask_with_asin = asin * _Mask;
+	var _distance_with_acos = acos * _line_length;
+	var _distance_with_asin = asin * _line_length;
+	
+	var pos_x_1 = x + _mask_with_acos + _mask_with_asin;
+	var pos_y_1 = y - _mask_with_asin + _mask_with_acos;
+	var pos_x_2 = x + _mask_with_acos + _distance_with_asin;
+	var pos_y_2 = y - _mask_with_asin + _distance_with_acos;
+	
+	var _AllowPlatform = allowGrinding;
+	var _AllowRailGrinding = allowGrinding;
+	var _AllowWaterRunning = aboveWater && !isUnderwater;
 
-	if collision_line(x+(acos*mask)+(asin*mask)+lengthdir_y(8, angle),y-(asin*mask)+(acos*mask)-lengthdir_y(8, angle-90),x+(acos*mask)+(asin*line),y-(asin*mask)+(acos*line),parWalls,true,true) 
-		return true;
-		
-	if characterLayer = 0 && collision_line(x+(acos*mask)+(asin*mask)+lengthdir_y(8, angle),y-(asin*mask)+(acos*mask)-lengthdir_y(8, angle-90),x+(acos*mask)+(asin*line),y-(asin*mask)+(acos*line),parBGWalls,true,true) 
-		return true;
-	
-	if characterLayer = 1 && collision_line(x+(acos*mask)+(asin*mask)+lengthdir_y(8, angle),y-(asin*mask)+(acos*mask)-lengthdir_y(8, angle-90),x+(acos*mask)+(asin*line),y-(asin*mask)+(acos*line),parFGWalls,true,true) 
-		return true;
-	
-	if allowGrinding && collision_line(x+(acos*mask)+(asin*mask)+lengthdir_y(8, angle),y-(asin*mask)+(acos*mask)-lengthdir_y(8, angle-90),x+(acos*mask)+(asin*line),y-(asin*mask)+(acos*line),parRails,true,true)
-		return true;
-	
-	if !isUnderwater && aboveWater && collision_line(x+(acos*mask)+(asin*mask)+lengthdir_y(8, angle),y-(asin*mask)+(acos*mask)-lengthdir_y(8, angle-90),x+(acos*mask)+(asin*line),y-(asin*mask)+(acos*line),parWaterSurface,true,true)
-		return true;
-		
-	if collision_line(x+(acos*mask)+(asin*mask)+lengthdir_y(8, angle),y-(asin*mask)+(acos*mask)-lengthdir_y(8, angle-90),x+(acos*mask)+(asin*line),y-(asin*mask)+(acos*line),parPlatforms,true,true) 
-		return true;
-
-	return false;
+	return ColScriptLineGeneral(pos_x_1, pos_y_1, pos_x_2, pos_y_2, _AllowPlatform, _AllowRailGrinding, _AllowWaterRunning);
 }

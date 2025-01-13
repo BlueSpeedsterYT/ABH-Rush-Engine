@@ -20,7 +20,7 @@ function Spindash(){
 	{
 	    spindashEnergy = 0;
 	    actionCurrent = PlayerActionSpinCharge; 
-	    animIndex = 0;
+	    image_index = 0;
 	}
 
 }

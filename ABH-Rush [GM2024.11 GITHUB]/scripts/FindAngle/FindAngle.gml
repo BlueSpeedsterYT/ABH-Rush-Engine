@@ -1,65 +1,50 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function FindAngle(_Angle, _HorizontalSpace, _Check){
-angle = floor(_Angle)//round(argument0/8)*8;
-hspace = _HorizontalSpace; 
-check = _Check;
+	var _approx_angle = floor(_Angle);
+	var _acos = dcos(_approx_angle);
+	var _asin = dsin(_approx_angle);
+	var _first_check = false;
+	var _second_check = false;
 
-acos = dcos(angle);
-asin = dsin(angle);
+	var _pos_x_1 = round(x - (_acos * _HorizontalSpace));
+	var _pos_y_1 = round(y + (_asin * _HorizontalSpace));
+	var _pos_x_2 = round(x + (_acos * _HorizontalSpace));
+	var _pos_y_2 = round(y - (_asin * _HorizontalSpace));
 
-x1 = round(x-(acos*hspace));
-y1 = round(y+(asin*hspace));
+	var _AllowPlatform = allowGrinding;
+	var _AllowRailGrinding = allowGrinding;
+	var _AllowWaterRunning = aboveWater;
 
-x2 = round(x+(acos*hspace));
-y2 = round(y-(asin*hspace));
-
-done1 = 0;
-done2 = 0;
-
-i = check;
-
-while(i > 0)
-{
-	if !done1
+	while(_Check > 0)
 	{
-		if collision_point(x1,y1,parWalls,true,true)
-			done1 = true;
-		if collision_point(x1,y1,parPlatforms,true,true)
-			done1 = true;
-		if characterLayer == 0 && collision_point(x1,y1,parBGWalls,true,true)
-			done1 = true;
-		if characterLayer == 1 && collision_point(x1,y1,parFGWalls,true,true)
-			done1 = true;
-		if allowGrinding && collision_point(x1,y1,parRails,true,true)
-			done1 = true;
+		if(_first_check == false)
+		{
+			_first_check = ColScriptPoint(_pos_x_1, _pos_y_1, _AllowPlatform, _AllowRailGrinding, _AllowWaterRunning);
 			
-		x1 += asin;
-		y1 += acos;
-	}
+			_pos_x_1 += _asin;
+			_pos_y_1 += _acos;
+		}
 	
-	if !done2
-	{
-		if collision_point(x2,y2,parWalls,true,true)
-			done2 = true;
-		if collision_point(x2,y2,parPlatforms,true,true)
-			done2 = true;
-		if characterLayer == 0 && collision_point(x2,y2,parBGWalls,true,true)
-			done2 = true;
-		if characterLayer == 1 && collision_point(x2,y2,parFGWalls,true,true)
-			done2 = true;
-		if allowGrinding && collision_point(x2,y2,parRails,true,true)
-			done2 = true;
+		if(_second_check == false)
+		{
+			_second_check = ColScriptPoint(_pos_x_2, _pos_y_2, _AllowPlatform, _AllowRailGrinding, _AllowWaterRunning);
 			
-		x2 += asin;
-		y2 += acos;
+			_pos_x_2 += _asin;
+			_pos_y_2 += _acos;
+		}
+
+		if(_first_check && _second_check)
+		{
+			break;
+		}
+		else
+		{
+			_Check--;
+		}
 	}
 
-	if done1 && done2
-		break;
-		
-	i -= 1;
-}
-
-return round(point_direction(x1,y1,x2,y2));
+	//Return Final Calculated Angle
+	var _calculated_angle = point_direction(_pos_x_1, _pos_y_1, _pos_x_2, _pos_y_2);
+	return round(_calculated_angle);
 }

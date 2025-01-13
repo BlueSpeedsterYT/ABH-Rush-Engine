@@ -23,7 +23,7 @@
 	// Set up HUD systems
 	if(HUDShow){
 		switch(StageHUDType){
-			case HUDType.Legacy:{
+			case StyleEnum.Legacy:{
 				xHUD = lerp(xHUD, 0, 0.2);
 				xHUD2 = lerp(xHUD2, 0, 0.2);
 				yHUD = lerp(yHUD, 0, 0.2);
@@ -31,7 +31,7 @@
 			}
 			break;
 			
-			case HUDType.Proto:{
+			case StyleEnum.Proto:{
 				HUDAlpha = lerp(HUDAlpha, 1, 0.2);
 			}
 			break;
@@ -39,7 +39,7 @@
 	}
 	else{
 		switch(StageHUDType){
-			case HUDType.Legacy:{
+			case StyleEnum.Legacy:{
 				xHUD = lerp(xHUD, -CameraViewWidth/2, 0.2);
 				xHUD2 = lerp(xHUD2, CameraViewWidth/2, 0.2);
 				yHUD = lerp(yHUD, -CameraViewHeight/2, 0.2);
@@ -47,7 +47,7 @@
 			}
 			break;
 			
-			case HUDType.Proto:{
+			case StyleEnum.Proto:{
 				HUDAlpha = lerp(HUDAlpha, 0, 0.2);
 			}
 			break;

@@ -6,8 +6,8 @@
   "name":"objCollisionPipeline",
   "overriddenProperties":[],
   "parent":{
-    "name":"Test Zone",
-    "path":"folders/Objects/Test Zone.yy",
+    "name":"Solid",
+    "path":"folders/Objects/Level Objects/Base Collision/Solid.yy",
   },
   "parentObjectId":{
     "name":"parWalls",

@@ -59,7 +59,7 @@ function HomingAttack(){
 	        newAlarm[2] = 15
 	        homingEnable = true
 	        homingDash = false
-	        animIndex = 0
+	        image_index = 0
 	    }
 	    else if actionCurrent = PlayerActionHomingNoTarget && ground
 	    {

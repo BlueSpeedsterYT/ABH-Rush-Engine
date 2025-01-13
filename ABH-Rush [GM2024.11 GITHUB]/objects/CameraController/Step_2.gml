@@ -8,7 +8,7 @@
 
 	switch(CamType)
 	{
-		case CameraType.Mirai:
+		case StyleEnum.Mirai:
 		{
 			if CamFollow == true {
 				if ObjectID != noone {
@@ -96,7 +96,7 @@
 		}
 		break;
 		
-		case CameraType.Proto:
+		case StyleEnum.Proto:
 		{
 			if CamFollow == true {
 				if ObjectID != noone {
@@ -156,7 +156,7 @@
 		}
 		break;
 		
-		case CameraType.Legacy:
+		case StyleEnum.Legacy:
 		{
 			if(CamFollow){
 				if(ObjectID == Player){

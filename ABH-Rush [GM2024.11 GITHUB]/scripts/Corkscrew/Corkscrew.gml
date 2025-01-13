@@ -8,7 +8,7 @@ function Corkscrew(){
 	    if ground || abs(speedX) < 4
 	    {
 	        actionCurrent = PlayerActionNormal
-	        animIndex = 0
+	        image_index = 0
 	    }
     
 	}
@@ -20,7 +20,7 @@ function Corkscrew(){
 	    if ground || abs(speedX) < 4
 	    {
 	        actionCurrent = PlayerActionRoll
-	        animIndex = 0
+	        image_index = 0
 	    }
 	}
 

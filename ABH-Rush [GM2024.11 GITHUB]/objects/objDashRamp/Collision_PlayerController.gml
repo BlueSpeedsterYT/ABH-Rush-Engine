@@ -8,7 +8,7 @@
 		}else if(rampType != "Normal"){
 			Player.actionCurrent = PlayerActionQTEInit;
 		}
-		Player.animIndex = 0;
+		Player.image_index = 0;
 		Player.x = x;
 		Player.y = y - 20;
 		Player.animDir = image_xscale;

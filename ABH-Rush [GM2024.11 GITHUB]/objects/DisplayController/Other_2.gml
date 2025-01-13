@@ -10,7 +10,6 @@
 	// Set up Game Data
 	GameData.TotalRings = 0;
 	GameData.CurrentCharacter = PlayerSonic;
-	GameData.CurrentPartner = -1;
 	GameData.CurrentLivesCount = 5;
 	
 

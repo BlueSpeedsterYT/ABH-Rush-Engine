@@ -6,9 +6,9 @@
 	    exit;
 	}
 	
-	image_speed = 0.4
-	depth = Player.depth - 2
-	image_alpha = 0
+	image_speed = 0.4;
+	depth = Player.depth - 2;
+	image_alpha = 0;
 	
 	airTime = 240;
 

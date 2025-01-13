@@ -6,8 +6,8 @@
   "name":"objCollisionSlopeBG",
   "overriddenProperties":[],
   "parent":{
-    "name":"Test Zone",
-    "path":"folders/Objects/Test Zone.yy",
+    "name":"Background",
+    "path":"folders/Objects/Level Objects/Base Collision/Background.yy",
   },
   "parentObjectId":{
     "name":"parBGWalls",

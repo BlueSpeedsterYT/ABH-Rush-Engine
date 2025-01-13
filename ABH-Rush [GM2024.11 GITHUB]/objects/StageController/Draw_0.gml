@@ -10,7 +10,7 @@
 
 	switch(StageHUDType)
 	{
-		case HUDType.Proto: // Prototype HUD
+		case StyleEnum.Proto: // Prototype HUD
 		{
 			//if(HUDShow){
 				draw_set_valign(fa_top);
@@ -33,7 +33,7 @@
 		}
 		break;
 		
-		case HUDType.Legacy: // Edited Classic HUD from ABH-Rush V1.0-1.5T
+		case StyleEnum.Legacy: // Edited Classic HUD from ABH-Rush V1.0-1.5T
 		{
 			draw_set_color(c_white);
 			var _LegacyFont = font_add_sprite_ext(sprHUDNumbersLegacy, "0123456789:.", false, 0);
@@ -61,7 +61,7 @@
 		}
 		break;
 		
-		case HUDType.Mirai: // New HUD
+		case StyleEnum.Mirai: // New HUD
 		{
 			draw_set_valign(fa_top);
 			draw_set_color(c_white);

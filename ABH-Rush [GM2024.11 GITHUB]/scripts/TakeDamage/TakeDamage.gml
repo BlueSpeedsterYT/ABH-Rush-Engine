@@ -8,9 +8,9 @@ function TakeDamage(){
 	        speedY = 0
 	    }    
 		
-	    if animIndex >= 21
+	    if image_index >= 21
 	    {
-	        animIndex = 0
+	        image_index = 0
 	        actionCurrent = PlayerActionNormal
 	    }
 	}

@@ -18,6 +18,7 @@
     {"$GMSpriteFrame":"","%Name":"1471ac22-3a02-4449-b740-81c2328d0699","name":"1471ac22-3a02-4449-b740-81c2328d0699","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"1c90d3ff-1054-4d73-86a8-979b51962a2f","name":"1c90d3ff-1054-4d73-86a8-979b51962a2f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"a32220d2-76ca-459b-a38e-7d0ecd4243aa","name":"a32220d2-76ca-459b-a38e-7d0ecd4243aa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"a2da7de7-c469-48a7-930f-bf5f76147690","name":"a2da7de7-c469-48a7-930f-bf5f76147690","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -28,7 +29,7 @@
   ],
   "name":"sprSonicDuck",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Sonic",
     "path":"folders/Sprites/Characters/Playable/Sonic.yy",
@@ -54,7 +55,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":6.0,
+    "length":7.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -91,11 +92,14 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a32220d2-76ca-459b-a38e-7d0ecd4243aa","path":"sprites/sprSonicDuck/sprSonicDuck.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7c260639-acfb-4c09-af7e-340df7995bab","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a2da7de7-c469-48a7-930f-bf5f76147690","path":"sprites/sprSonicDuck/sprSonicDuck.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"fef3ec6c-e4a2-4b24-a28f-a92d7277a896","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":14,
+    "xorigin":17,
     "yorigin":15,
   },
   "swatchColours":null,

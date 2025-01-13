@@ -23,35 +23,6 @@
 			WindowScale = 1;
 		}
 	}
-
-	// Swap Resolutions
-	if(keyboard_check_pressed(ord("1"))){
-		if(GameWidth != 240){
-			GameWidth = 240;
-			GameHeight = 160;
-		}
-	}
-	
-	if(keyboard_check_pressed(ord("2"))){
-		if(GameWidth != 320){
-			GameWidth = 320;
-			GameHeight = 224;
-		}
-	}
-	
-	if(keyboard_check_pressed(ord("3"))){
-		if(GameWidth != 456){
-			GameWidth = 456;
-			GameHeight = 256;
-		}
-	}
-	
-	if(keyboard_check_pressed(ord("4"))){
-		if(GameWidth != 640){
-			GameWidth = 640;
-			GameHeight = 360;
-		}
-	}
 	
 	surface_resize(application_surface, GameWidth*WindowScale, GameHeight*WindowScale);
 	window_set_size(GameWidth*WindowScale, GameHeight*WindowScale);

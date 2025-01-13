@@ -4,19 +4,15 @@ function macros(){
 	#macro GameTitle "ABH-Rush Engine"
 	#macro GameVersion "V. 1.75"
 	#macro GameData global
-	#macro GlobalGameWidth 456
-	#macro GlobalGameHeight 256
-	#macro GameHUD HUDType.Proto
-	#macro GameCamera CameraType.Mirai
-	enum CameraType {
-		Legacy = 0,
-		Mirai = 1,
-		Proto = 2
-	}
-	enum HUDType {
-		Legacy = 0,
-		Mirai = 1,
-		Proto = 2
+	#macro GlobalGameWidth 400
+	#macro GlobalGameHeight 270
+	#macro GameHUD StyleEnum.Proto
+	#macro GameCamera StyleEnum.Mirai
+	enum StyleEnum {
+		Legacy,
+		Mirai,
+		Proto,
+		TOTAL_STYLES
 	}
 	
 	// GAME CONTROL DATA
@@ -45,19 +41,22 @@ function macros(){
 		HUB = 0,
 		Act1 = 1,
 		Act2 = 2,
-		Act3 = 3
+		Act3 = 3,
+		TOTAL_ACTS
 	}
 	
 	enum MissionType {
 		Main = 0,
 		Mission1 = 1,
 		Mission2 = 2,
-		Mission3 = 3
+		Mission3 = 3,
+		TOTAL_MISSIONS
 	}
 	
 	enum StageVersion {
 		Normal = 0,
-		EX = 1
+		EX = 1,
+		TOTAL_STAGE_VERSIONS
 	}
 	
 	#macro StageHUB ActType.HUB
@@ -115,10 +114,11 @@ function macros(){
 	#macro PlayerActionQTESuccess 15
 	#macro PlayerActionQTEFailure 15.5
 	#macro PlayerActionCorkscrew 16
+	#macro PlayerActionRailCorkscrew 16.5
 	#macro PlayerActionRollCorkscrew 17
 	#macro PlayerActionStomp 18
-	#macro PlayerActionStompAlt 18.5
-	#macro PlayerActionWallJumpInit 19
+	#macro PlayerActionStompShadow 18.5
+	#macro PlayerActionWallHang 19
 	#macro PlayerActionWallJump 20
 	#macro PlayerActionCannon 21
 	#macro PlayerActionDamage 22

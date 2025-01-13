@@ -13,5 +13,5 @@ keyBoostReleased = keyboard_check_released(ord("A")) || gamepad_button_check_rel
 keySpecial = keyboard_check_pressed(ord("W")) || gamepad_button_check_pressed(0,gp_face4);
 
 //begin position values for boost sprite direction
-x_begin = x
-y_begin = y
+x_begin = x;
+y_begin = y;

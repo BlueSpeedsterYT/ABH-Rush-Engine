@@ -25,7 +25,7 @@
   ],
   "name":"sprSonicJumpMid",
   "nineSlice":null,
-  "origin":9,
+  "origin":4,
   "parent":{
     "name":"Sonic",
     "path":"folders/Sprites/Characters/Playable/Sonic.yy",
@@ -84,7 +84,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":12,
-    "yorigin":15,
+    "yorigin":20,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

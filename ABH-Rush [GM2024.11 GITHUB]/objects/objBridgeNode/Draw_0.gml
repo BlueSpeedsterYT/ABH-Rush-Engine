@@ -1,3 +1,3 @@
 /// @description Draw Bridge
 
-	draw_sprite(parBridge.BridgeSprite, 0, x, y);
+	draw_sprite(objBridge.BridgeSprite, 0, x, y);

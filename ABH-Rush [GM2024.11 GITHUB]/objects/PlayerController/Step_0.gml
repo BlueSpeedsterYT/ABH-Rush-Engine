@@ -20,6 +20,7 @@
 		if(newAlarm[0] == 1)
 		{
 			grav = 0.21875;
+			newAlarm[0] = 0;
 		}
 	}
 	if(newAlarm[1] > 0) // Reset Action from Dash Pad
@@ -28,6 +29,7 @@
 		if(newAlarm[1] == 1 && actionCurrent == PlayerActionDashPad)
 		{
 			actionCurrent = PlayerActionNormal;
+			newAlarm[1] = 0;
 		}
 	}
 	if(newAlarm[2] > 0) // Homing Dash Gravity
@@ -39,6 +41,7 @@
 			if(character == PlayerSonic) speedX = 0; // COMMENT THIS CODE TO LET SONIC GAIN ADDITIONAL SPEED.
 			speedY = 0;
 			grav = 0.21875;
+			newAlarm[2] = 0;
 		}
 	}
 	if(newAlarm[3] > 0) // Player Stage Restart (Death)
@@ -48,6 +51,7 @@
 		{
 			GameData.CurrentLivesCount -= 1;
 			room_restart();
+			newAlarm[3] = 0;
 		}
 	}
 	if(newAlarm[5] > 0) // Reset Gravity
@@ -56,6 +60,7 @@
 		if(newAlarm[5] == 1)
 		{
 			grav = 0.21875;
+			newAlarm[5] = 0;
 		}
 	}
 	if(newAlarm[6] > 0) // Reset Action (?)
@@ -64,6 +69,7 @@
 		if(newAlarm[6] == 1)
 		{
 			actionCurrent = PlayerActionNormal;
+			newAlarm[6] = 0;
 		}
 	}
 	if(newAlarm[7] > 0) // Jump off of a Wall
@@ -74,6 +80,7 @@
 			actionCurrent = PlayerActionNormal;
 			x = x - (animDir * 6)
 			wallJumpOff = true;
+			newAlarm[7] = 0;
 		}
 	}
 	if(newAlarm[8] > 0) // Tails' Flight
@@ -82,9 +89,10 @@
 		if(newAlarm[8] == 1)
 		{
 			if(character == PlayerTails){
-				animIndex = 0;
+				image_index = 0;
 				actionCurrent = PlayerActionHomingNoTarget;
 			}
+			newAlarm[8] = 0;
 		}
 	}
 	
@@ -94,7 +102,7 @@
 		{
 			case PlayerSonic:
 			{
-				animSprite = sprSonicIdle;
+				sprite_index = sprSonicIdle;
 			}
 			break;
 		}
@@ -161,7 +169,7 @@
 	    aboveWater = false;
 		
 	// Set angle when running on water surface:
-	if (collision_line(x,y,x,y+20,parWaterSurface,true,true) || collision_line(x,y,x,y+20,parBridge,true,true))
+	if (collision_line(x,y,x,y+20,parWaterSurface,true,true))
 	    angle = 0;
 		
 	// Change Physics:

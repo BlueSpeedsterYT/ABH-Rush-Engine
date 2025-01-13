@@ -18,10 +18,10 @@ function StompAttack(){
 	if !allowStomp && ground
 		allowStomp = true;
 		
-	if actionCurrent == PlayerActionStompAlt {
+	if actionCurrent == PlayerActionStompShadow {
 		speedY = 0;
 		speedX = 0;
-		if animIndex >= 6 {
+		if image_index >= 6 {
 			speedX = animDir*5;
 			actionCurrent = PlayerActionStomp;
 		}
@@ -33,7 +33,7 @@ function StompAttack(){
 			gamepad_set_rumble(30);
 			EnableShockwave(30);
 			actionCurrent = PlayerActionNormal;
-			animIndex = 0;
+			image_index = 0;
 			speedY = 0;
 			speedX = 0;
 		}

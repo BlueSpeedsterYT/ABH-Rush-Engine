@@ -21,7 +21,7 @@
 	endStageType = PlayerClearRush; //Stage Clear Action
 	form = PlayerFormNormal; // Current Form
 	
-	mask = floor(sprite_get_width(mskPlayer)/2); // The Player's Mask (Used for collision)
+	mask = 16; // The Player's Mask (Used for collision)
 	
 	allowMovement = false; // Movement Check (Usually disabled during a Title Card.)
 	
@@ -82,17 +82,16 @@
 	dustIndex = 0; // animation index for the Spin Dash dust effect.
 	damageEffect = 0; // timer for the invincbility effect after being damaged.
 	canFootstep = false; // Allows for the footstep sounds to be used.
-	soundFootstep[0] = -1;
-	soundFootstep[1] = -1;
+	soundFootstep = [-1, -1];
 	
 	// Animation System:
 	animDir = 1; // Animation Direction
-	animAlpha = 1; // Animation Alpha
+	image_alpha = 1; // Animation Alpha
 	animYPosDraw = 0; // Player's custom Y position for sprite drawing.
-	animAngle = 0; // Animation Angle.
-	animSprite = sprSonicIdle; // The current animation sprite
+	image_angle = 0; // Animation Angle.
+	sprite_index = sprSonicIdle; // The current animation sprite
 	animFrame = 0; // the current animation frame
-	animIndex = 0; // the current animation index
+	image_index = 0; // the current animation index
 	
 	// Custom Alarm System:
 	newAlarm[0] = 0;

@@ -1,19 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function ColScriptRight(_Mask){
-	mask = _Mask;
+	//Define Values
+	var _multiply = 2;
+	var _radius = 3;
+	var _pos_x = (x + (acos * _Mask) - (asin * _multiply));
+	var _pos_y = (y - (asin * _Mask) - (acos * _multiply));
 
-	if collision_circle(x+(acos*mask)-asin*2,y-(asin*mask)-acos*2,3,parWalls,true,true) 
-		return true;
-		
-	if characterLayer = 0 && collision_circle(x+(acos*mask)-asin*2,y-(asin*mask)-acos*2,3,parBGWalls,true,true) 
-		return true;
-	
-	if characterLayer = 1 && collision_circle(x+(acos*mask)-asin*2,y-(asin*mask)-acos*2,3,parFGWalls,true,true) 
-		return true;
-	
-	if collision_circle(x+(acos*mask)-asin*2,y-(asin*mask)-acos*2,3,parRails,true,true) && allowGrinding && angle == 0 
-		return true;
-
-	return false;
+	return ColScriptCircle(_pos_x, _pos_y, _radius);
 }

@@ -6,7 +6,7 @@
 		Player.angle = 0;
 		Player.actionCurrent = PlayerActionSpring;
 		Player.ground = false
-	    Player.animIndex = 0;
+	    Player.image_index = 0;
 	    Player.x = x + 16*dcos(image_angle);
 	    Player.y = y - 16*dsin(image_angle);
 		isActive = false;
@@ -19,16 +19,16 @@
 		image_speed = 0.75;
 		if image_angle == 45 || image_angle == 135
         {   
-            Player.animIndex = 0;
-            Player.animSprite = sprSonicCorkscrew;
+            Player.image_index = 0;
+            Player.sprite_index = sprSonicCorkscrew;
             
         }
         else if (image_angle > 0 && image_angle < 45) || (image_angle < 180 && image_angle > 135)
         {
-            Player.animSprite = sprSonicWallJump;
+            Player.sprite_index = sprSonicWallJump;
         }
         else
         {
-            Player.animSprite = sprSonicJump;
+            Player.sprite_index = sprSonicJump;
         }
 	}

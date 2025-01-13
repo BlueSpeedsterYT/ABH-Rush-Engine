@@ -2,7 +2,6 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function safe_division(_Number, _SecondNum){
 
-	if(_Number == 0.0) return 0.0;
-	else return _Number/_SecondNum;
+	return (_Number == 0.0) ? 0.0 : _Number/_SecondNum;
 
 }

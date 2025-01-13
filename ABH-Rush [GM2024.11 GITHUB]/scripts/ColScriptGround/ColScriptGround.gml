@@ -1,27 +1,17 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function ColScriptGround(_Mask){
-	mask = _Mask;
-	multiply = 2.5;
-	radius = 9;
+	//Define Values
+	var _multiply = 2;
+	var _multiplied_mask = (_Mask * _multiply)
+	var _pos_x = (x + (asin * _multiplied_mask));
+	var _pos_y = (y + (acos * _multiplied_mask));
+	var _radius = 9;
 
-	if collision_circle(x-asin*(mask*multiply),y+acos*(mask*multiply),radius,parWalls,true,true) 
-		return true;
-		
-	if characterLayer = 0 && collision_circle(x-asin*(mask*multiply),y+acos*(mask*multiply),radius,parBGWalls,true,true) 
-		return true;
-	
-	if characterLayer = 1 && collision_circle(x-asin*(mask*multiply),y+acos*(mask*multiply),radius,parFGWalls,true,true) 
-		return true;
-	
-	if allowGrinding && collision_circle(x-asin*(mask*multiply),y+acos*(mask*multiply),radius,parRails,true,true)
-		return true;
+	//Define Checks
+	var _AllowPlatform = allowGrinding;
+	var _AllowRailGrinding = allowGrinding;
+	var _AllowWaterRunning = aboveWater && !isUnderwater;
 
-	if !isUnderwater && aboveWater && collision_circle(x-asin*(mask*multiply),y+acos*(mask*multiply),radius,parWaterSurface,true,true) 
-		return true;
-
-	if collision_circle(x-asin*(mask*multiply),y+acos*(mask*multiply),radius,parPlatforms,true,true) 
-		return true;
-
-	return false;
+	return ColScriptCircle(_pos_x, _pos_y, _radius, _AllowPlatform, _AllowRailGrinding, _AllowWaterRunning);
 }

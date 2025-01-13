@@ -61,7 +61,30 @@
 		
 	if(titleState == 4)
 	{
-		Player.allowMovement = true;
+		switch(Stage.StartType)
+		{
+			default:
+			case PlayerStartIdle:
+			{
+				Player.allowMovement = true;
+				Player.ground = true;
+				Player.animDir = 1;
+			}
+			break;
+			
+			case PlayerStartRun:
+			{
+				Player.allowMovement = true;
+				Player.ground = true;
+				Player.animDir = 1;
+				if(!GameData.StageCheckPointPassed)
+				{
+					Player.speedX = 9;
+				}
+			}
+			break;
+		}
+		
 		if(titleAlpha[2] > 0){
 			titleAlpha[2] -= 0.1;
 			if(titleAlpha[2] == 0){

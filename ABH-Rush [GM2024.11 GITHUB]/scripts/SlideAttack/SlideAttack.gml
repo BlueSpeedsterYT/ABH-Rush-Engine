@@ -8,7 +8,7 @@ function SlideAttack(){
 	    {
 	        if ground && actionCurrent == PlayerActionNormal && abs(speedX) >= 3 && keyAttackPressed && allowSliding
 	        {
-	            animSprite = sprSonicJog;
+	            sprite_index = sprSonicJog;
 	            actionCurrent = PlayerActionSlide;
 	            //audio_play_sound(snd_SonicAttack3,1,false);
 	        }     
@@ -36,7 +36,7 @@ function SlideAttack(){
 	    //{
 	    //    if ground && actionCurrent == PlayerActionNormal && keyAttack
 	    //    {
-	    //        animIndex = 0
+	    //        image_index = 0
 	    //        if abs(speedX) < 10
 	    //            speedX = 10*animDir 
 	    //        actionCurrent = PlayerActionSlide
@@ -50,7 +50,7 @@ function SlideAttack(){
 	    //        if speedX < 0 
 	    //            speedX += fric;
         
-	    //        if animIndex >= 24 || !ground
+	    //        if image_index >= 24 || !ground
 	    //            actionCurrent = PlayerActionNormal        
 	    //    }      
 	    //}

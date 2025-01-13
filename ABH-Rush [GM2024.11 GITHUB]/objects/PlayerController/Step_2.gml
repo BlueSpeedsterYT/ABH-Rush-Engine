@@ -38,5 +38,5 @@ if(form == PlayerFormNormal)
 //    DrawTails();
 //}
 
-boost_direction = point_direction(x_begin,y_begin,x,y)
-tail_direction = point_direction(x_begin,y_begin,x,y)
+boost_direction = point_direction(x_begin,y_begin,x,y);
+//tail_direction = point_direction(x_begin,y_begin,x,y);

@@ -8,7 +8,7 @@
 			Player.qteAmount = 1;
 			Player.actionCurrent = PlayerActionQTESuccess;
 			Player.speedY = -8;
-			Player.animIndex = 0;
+			Player.image_index = 0;
 			Player.grav = 0.21875;
 			CallTrickFinish();
 		}
@@ -19,5 +19,5 @@
 		Player.speedX = Player.animDir*3;
 		Player.grav = 0.21875;
 		CallTrickFinish(3);
-		Player.animIndex = 0;
+		Player.image_index = 0;
 	}

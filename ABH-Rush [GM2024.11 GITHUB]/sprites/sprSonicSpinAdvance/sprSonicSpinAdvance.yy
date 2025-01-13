@@ -26,7 +26,7 @@
   ],
   "name":"sprSonicSpinAdvance",
   "nineSlice":null,
-  "origin":9,
+  "origin":4,
   "parent":{
     "name":"Sonic",
     "path":"folders/Sprites/Characters/Playable/Sonic.yy",
@@ -88,7 +88,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":13,
-    "yorigin":10,
+    "yorigin":13,
   },
   "swatchColours":null,
   "swfPrecision":2.525,

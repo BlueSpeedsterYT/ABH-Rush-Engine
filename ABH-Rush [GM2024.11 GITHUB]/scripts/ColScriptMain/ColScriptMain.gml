@@ -1,25 +1,19 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function ColScriptMain(_Mask){
-	mask = _Mask;
-
-	if collision_circle(x,y,mask,parWalls,true,true) 
-		return true;
-		
-	if characterLayer = 0 && collision_circle(x,y,mask,parBGWalls,true,true) 
-		return true;
+	//Define Values
+	var _radius = _Mask;
+	var pos_x = x;
+	var pos_y = y;
 	
-	if characterLayer = 1 && collision_circle(x,y,mask,parFGWalls,true,true) 
-		return true;
+	//Define Checks
+	var _AllowPlatform = allowGrinding;
+	var _AllowRailGrinding = allowGrinding;
+	var _AllowWaterRunning = aboveWater && !isUnderwater;
 	
-	if allowGrinding && collision_circle(x,y,mask,parRails,true,true)
-		return true;
-
-	if !isUnderwater && aboveWater && collision_circle(x,y,mask,parWaterSurface,true,true) 
-		return true;
-
-	if collision_circle(x,y,mask,parPlatforms,true,true) 
-		return true;
-
-	return false;
+	var _NormalCollision = collision_circle(pos_x, pos_y, _radius, parPlatforms, true, true);
+	if (_NormalCollision) return true;
+	
+	//Return Result
+	return ColScriptCircle(pos_x, pos_y, _radius, _AllowPlatform, _AllowRailGrinding, _AllowWaterRunning);
 }

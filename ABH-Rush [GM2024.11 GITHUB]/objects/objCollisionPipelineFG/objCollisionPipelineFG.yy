@@ -6,8 +6,8 @@
   "name":"objCollisionPipelineFG",
   "overriddenProperties":[],
   "parent":{
-    "name":"Test Zone",
-    "path":"folders/Objects/Test Zone.yy",
+    "name":"Foreground",
+    "path":"folders/Objects/Level Objects/Base Collision/Foreground.yy",
   },
   "parentObjectId":{
     "name":"parFGWalls",

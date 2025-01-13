@@ -5,19 +5,19 @@ function SetHUDSprite(_miraiSprite, _protoSprite, _legacySprite){
 	if instance_exists(Stage){
 		with (Stage){
 			switch(StageHUDType){
-				case HUDType.Mirai:
+				case StyleEnum.Mirai:
 				{
 					return _miraiSprite;
 				}
 				break;
 				
-				case HUDType.Proto:
+				case StyleEnum.Proto:
 				{
 					return _protoSprite;
 				}
 				break;
 				
-				case HUDType.Legacy:
+				case StyleEnum.Legacy:
 				{
 					return _legacySprite;
 				}

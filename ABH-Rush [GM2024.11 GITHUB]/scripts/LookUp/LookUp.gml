@@ -10,10 +10,10 @@ function LookUp(){
 		if abs(speedX) < 0.2 {
 			speedX = 0;
 			actionCurrent = PlayerActionLookUp;
-			animIndex = 0;
+			image_index = 0;
 		}
 	}
-	if (!keyUp || !ground || keyLeft || keyRight) && (actionCurrent == PlayerActionLookUp && animIndex >= 5) {
+	if (!keyUp || !ground || keyLeft || keyRight) && (actionCurrent == PlayerActionLookUp && image_index > 4) {
 		actionCurrent = PlayerActionNormal;
 		lookTimer = 0;
 	}

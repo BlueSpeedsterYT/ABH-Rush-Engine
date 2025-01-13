@@ -6,8 +6,8 @@
   "name":"objCollisionPlatform",
   "overriddenProperties":[],
   "parent":{
-    "name":"Test Zone",
-    "path":"folders/Objects/Test Zone.yy",
+    "name":"Platform",
+    "path":"folders/Objects/Level Objects/Base Collision/Platform.yy",
   },
   "parentObjectId":{
     "name":"parPlatforms",

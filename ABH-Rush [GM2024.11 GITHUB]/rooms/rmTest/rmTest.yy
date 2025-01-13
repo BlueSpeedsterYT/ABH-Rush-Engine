@@ -37,7 +37,6 @@
     {"name":"inst_38EC3C50","path":"rooms/rmTest/rmTest.yy",},
     {"name":"inst_3612126D","path":"rooms/rmTest/rmTest.yy",},
     {"name":"inst_185312E6","path":"rooms/rmTest/rmTest.yy",},
-    {"name":"inst_6537844C","path":"rooms/rmTest/rmTest.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -59,7 +58,6 @@
         {"$GMRInstance":"v1","%Name":"inst_38EC3C50","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_38EC3C50","objectId":{"name":"objDashRing","path":"objects/objDashRing/objDashRing.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":180.0,"scaleX":1.0,"scaleY":1.0,"x":1888.0,"y":48.0,},
         {"$GMRInstance":"v1","%Name":"inst_3612126D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3612126D","objectId":{"name":"objDashRing","path":"objects/objDashRing/objDashRing.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":225.0,"scaleX":1.0,"scaleY":1.0,"x":1536.0,"y":48.0,},
         {"$GMRInstance":"v1","%Name":"inst_185312E6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_185312E6","objectId":{"name":"objDashPad","path":"objects/objDashPad/objDashPad.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1376.0,"y":208.0,},
-        {"$GMRInstance":"v1","%Name":"inst_6537844C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6537844C","objectId":{"name":"trgCameraBoundary","path":"objects/trgCameraBoundary/trgCameraBoundary.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":48.0,"scaleY":26.0,"x":0.0,"y":0.0,},
       ],"layers":[],"name":"LevelObjects","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"StageCollsion","depth":198,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_5F02EF2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5F02EF2","objectId":{"name":"objCollisionWall","path":"objects/objCollisionWall/objCollisionWall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":7.0,"scaleY":1.0,"x":1312.0,"y":224.0,},
