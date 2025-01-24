@@ -3,7 +3,7 @@
 	NumLogs     = sprite_width/sprite_get_width(BridgeSprite); // Number of logs wich the bridge has
     BridgeWidth = NumLogs*sprite_get_width(BridgeSprite);           
     HalfWidth   = BridgeWidth / 2;   // Half the width of the bridge (GASP)
-    MaxTension  = 16;  // Max tension (height) possible
+    MaxTension  = 14;  // Max tension (height) possible
     Logs = [];
 	
 	//Methods

@@ -21,7 +21,7 @@
 	    if image_angle mod 360 < 10
 	        image_angle = 0;
 	}
-	else if(ground && collision_line(x,y,x,y+20,parWaterSurface,true,true)) //if running on water then angle is 0
+	else if(ground && (collision_line(x,y,x,y+20,parWaterSurface,true,true) || collision_line(x,y,x,y+20,objBridgeNode,true,true))) //if running on water then angle is 0
 	{
 	    image_angle = 0;
 	}

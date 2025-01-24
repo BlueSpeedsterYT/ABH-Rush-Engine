@@ -19,8 +19,8 @@
     {"$GMFolder":"","%Name":"Base Collision","folderPath":"folders/Objects/Level Objects/Base Collision.yy","name":"Base Collision","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Background","folderPath":"folders/Objects/Level Objects/Base Collision/Background.yy","name":"Background","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Foreground","folderPath":"folders/Objects/Level Objects/Base Collision/Foreground.yy","name":"Foreground","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Solid","folderPath":"folders/Objects/Level Objects/Base Collision/Solid.yy","name":"Solid","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Platform","folderPath":"folders/Objects/Level Objects/Base Collision/Platform.yy","name":"Platform","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Solid","folderPath":"folders/Objects/Level Objects/Base Collision/Solid.yy","name":"Solid","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Level Design Help","folderPath":"folders/Objects/Level Objects/Level Design Help.yy","name":"Level Design Help","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Triggers","folderPath":"folders/Objects/Level Objects/Level Design Help/Triggers.yy","name":"Triggers","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Layers","folderPath":"folders/Objects/Level Objects/Level Design Help/Triggers/Layers.yy","name":"Layers","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -368,9 +368,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rmDisplayInit","path":"rooms/rmDisplayInit/rmDisplayInit.yy",},},
-    {"roomId":{"name":"rmPlanetWisp","path":"rooms/rmPlanetWisp/rmPlanetWisp.yy",},},
-    {"roomId":{"name":"rmInit","path":"rooms/rmInit/rmInit.yy",},},
     {"roomId":{"name":"rmTest","path":"rooms/rmTest/rmTest.yy",},},
+    {"roomId":{"name":"rmInit","path":"rooms/rmInit/rmInit.yy",},},
+    {"roomId":{"name":"rmPlanetWisp","path":"rooms/rmPlanetWisp/rmPlanetWisp.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

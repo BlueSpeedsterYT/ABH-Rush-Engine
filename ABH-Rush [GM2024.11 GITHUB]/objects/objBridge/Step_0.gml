@@ -1,14 +1,15 @@
 /// @description Bridge Collsion
 
+	//"This is where the fun begins"
+	//Reset Height for Logs to 0.
+	for (var i = 0; i < NumLogs; ++i;)
+	{
+		Logs[i].Height = 0;
+	}
+	
 	//Make a check if Player Controller exists
 	if(instance_find(Player, 0) != noone)
 	{
-		//"This is where the fun begins"
-		//Reset Height for Logs to 0.
-		for (var i = 0; i < NumLogs; ++i;)
-	    {
-			Logs[i].Height = 0;
-	    }
 		
 		//Set up needed Bridge collision vars
 		var pos_x_1 = x;
@@ -21,8 +22,9 @@
 		if(_playerBridgeCollide && Player.ground)
 		{
 			//Tension Values
-			var player_x_pos = Player.x - x;
-			var value_a = max(0, floor(player_x_pos / sprite_get_width(BridgeSprite)))
+			var accurate_player_x_pos = round(Player.x/sprite_get_width(BridgeSprite)) * sprite_get_width(BridgeSprite);
+			var player_x_pos = accurate_player_x_pos - x;
+			var value_a = max(floor(player_x_pos / sprite_get_width(BridgeSprite)), 0)
 			var value_b = NumLogs - 1;
 			var tension_point = min(value_a, value_b);
 			
@@ -36,12 +38,12 @@
 			var right_angle = pi;
 			
 			//Determine Distance from the Center
-			var divider = floor(player_x_pos - HalfWidth);
+			var divider = floor(accurate_player_x_pos - x-HalfWidth);
 			var multipler = 1 - (abs(divider / HalfWidth));
 			var distance_from_center = MaxTension * multipler;
 			
 			//Reposition the left Logs
-			for(var i = 0; i < tension_point; ++i)
+			for(var i = 0; i <= tension_point; i++;)
 			{
 				//Variables
 				var actual_height = sin(left_angle) * distance_from_center;
@@ -57,7 +59,7 @@
 			}
 			
 			//Reposition the right Logs
-			for(var i = NumLogs-1; i > tension_point; --i)
+			for(var i = NumLogs-1; i > tension_point; i--;)
 			{
 				//Variables
 				var actual_height = sin(right_angle) * distance_from_center;
@@ -72,15 +74,15 @@
 				right_angle -= right_gradient;
 			}
 		}
-		
-		//Alter Log Height
-		for(var i = 0; i < NumLogs; ++i)
-		{
-			//Variables
-			var actual_height = Logs[i].LogObject.y;
-			var new_height = y + Logs[i].Height;
+	}
+	
+	//Alter Log Height
+	for(var i = 0; i < NumLogs; ++i)
+	{
+		//Variables
+		var actual_height = Logs[i].LogObject.y;
+		var new_height = y + Logs[i].Height;
 			
-			//Adjust the height
-			Logs[i].LogObject.y = actual_height + (new_height - actual_height) * 0.2;
-		}
+		//Adjust the height
+		Logs[i].LogObject.y = actual_height + (new_height - actual_height) * 0.2;
 	}

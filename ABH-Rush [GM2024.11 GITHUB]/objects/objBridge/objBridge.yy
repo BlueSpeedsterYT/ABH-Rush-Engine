@@ -13,10 +13,7 @@
     "name":"Bridge",
     "path":"folders/Objects/Level Objects/The Main Stuff/Bridge.yy",
   },
-  "parentObjectId":{
-    "name":"parPlatforms",
-    "path":"objects/parPlatforms/parPlatforms.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
