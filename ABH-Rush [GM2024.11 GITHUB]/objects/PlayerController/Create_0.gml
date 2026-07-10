@@ -9,12 +9,6 @@
 	PlayerCam = instance_create_depth(x, y, -99999, Camera); // Camera
 	StageManager = instance_create_depth(x, y, -99999, Stage); // Stage Controller
 	
-	// Set up Checkpoint system
-	if GameData.StageCheckPointPassed == true { //if the checkpoint check returns true.
-		x = GameData.StageCheckPointX; // set Player's X to the Checkpoint's X
-		y = GameData.StageCheckPointY; // set Player's Y to the Checkpoint's Y
-	}
-	
 	// Character Init:
 	depth = -2;
 	character = GameData.CurrentCharacter; // Main Character

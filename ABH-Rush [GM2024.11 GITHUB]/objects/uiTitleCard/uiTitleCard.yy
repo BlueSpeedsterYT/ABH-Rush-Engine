@@ -10,8 +10,8 @@
   "name":"uiTitleCard",
   "overriddenProperties":[],
   "parent":{
-    "name":"Title Card",
-    "path":"folders/Objects/Main Objects/Title Card.yy",
+    "name":"UI",
+    "path":"folders/Objects/Main Objects/UI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

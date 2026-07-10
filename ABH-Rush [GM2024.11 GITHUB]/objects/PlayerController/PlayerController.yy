@@ -35,12 +35,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"mskPlayer",
-    "path":"sprites/mskPlayer/mskPlayer.yy",
+    "name":"mskMain",
+    "path":"sprites/mskMain/mskMain.yy",
   },
   "spriteMaskId":{
-    "name":"mskPlayer",
-    "path":"sprites/mskPlayer/mskPlayer.yy",
+    "name":"mskMain",
+    "path":"sprites/mskMain/mskMain.yy",
   },
   "visible":true,
 }

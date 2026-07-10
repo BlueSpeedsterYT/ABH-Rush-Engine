@@ -1,6 +1,6 @@
 function Transform(){
 
-	if !ground && actionCurrent == PlayerActionJump && keySpecial && StageManager.StageRings >= 50 && form == PlayerFormNormal
+	if !ground && actionCurrent == PlayerActionJump && keySpecial && GameData.StageRings >= 50 && form == PlayerFormNormal
 	{
 	    form = PlayerFormSuper;
 	    image_index = 0;
@@ -15,7 +15,7 @@ function Transform(){
 	        actionCurrent = PlayerActionNormal   
 	}
 
-	if form != PlayerFormNormal && StageManager.StageRings <= 0
+	if form != PlayerFormNormal && GameData.StageRings <= 0
 	{
 	    form = PlayerFormNormal;
 	}

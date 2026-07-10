@@ -1,13 +1,10 @@
 function macros(){
 
 	// GENERAL GAME DATA
-	#macro GameTitle "ABH-Rush Engine"
-	#macro GameVersion "V. 1.75"
 	#macro GameData global
-	#macro GlobalGameWidth 400
-	#macro GlobalGameHeight 270
-	#macro GameHUD StyleEnum.Proto
-	#macro GameCamera StyleEnum.Mirai
+	#macro GlobalGameWidth 456
+	#macro GlobalGameHeight 256
+	#macro GameHUD StyleEnum.Mirai
 	enum StyleEnum {
 		Legacy,
 		Mirai,

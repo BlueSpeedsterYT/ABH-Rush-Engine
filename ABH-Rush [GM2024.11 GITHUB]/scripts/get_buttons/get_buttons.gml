@@ -37,7 +37,7 @@ function get_button_height(){
 			}else if(inputType == InputXbox){
 				_buttonSprite = SetHUDSprite(sprInputXbox, sprInputXbox, sprInputXboxLegacy);
 			}
-			return _buttonSprite.sprite_height;
+			return sprite_get_height(_buttonSprite);
 		}
 	}
 	else{
@@ -57,7 +57,7 @@ function get_button_width(){
 			}else if(inputType == InputXbox){
 				_buttonSprite = SetHUDSprite(sprInputXbox, sprInputXbox, sprInputXboxLegacy);
 			}
-			return _buttonSprite.sprite_width;
+			return sprite_get_width(_buttonSprite);
 		}
 	}
 	else{

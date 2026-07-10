@@ -2,66 +2,19 @@
 
 	// Calculate Time
 	if(EnableTimer){
-		if(!isCountDown){
-			StageTimeLimit = 5999999;
-			if(StageTimer < StageTimeLimit){
-				StageTimer += 1000/60;
-			}
-		}
-		else
-		{
-			StageTimeLimit = 0;
-			if(StageTimer > StageTimeLimit){
-				StageTimer -= 1000/60;
-			}
-		}
+		GameData.StageTimer += 1000/60;
 	}
 	
-	// Set up Object Timer:
-	ObjectTimer += 1000/60;
+	//Limit Time.
+	GameData.StageTimer = min(GameData.StageTimer, 5999999);
 	
-	// Set up HUD systems
-	if(HUDShow){
-		switch(StageHUDType){
-			case StyleEnum.Legacy:{
-				xHUD = lerp(xHUD, 0, 0.2);
-				xHUD2 = lerp(xHUD2, 0, 0.2);
-				yHUD = lerp(yHUD, 0, 0.2);
-				yHUD2 = lerp(yHUD2, 0, 0.2);
-			}
-			break;
-			
-			case StyleEnum.Proto:{
-				HUDAlpha = lerp(HUDAlpha, 1, 0.2);
-			}
-			break;
-		}
-	}
-	else{
-		switch(StageHUDType){
-			case StyleEnum.Legacy:{
-				xHUD = lerp(xHUD, -CameraViewWidth/2, 0.2);
-				xHUD2 = lerp(xHUD2, CameraViewWidth/2, 0.2);
-				yHUD = lerp(yHUD, -CameraViewHeight/2, 0.2);
-				yHUD2 = lerp(yHUD2, CameraViewHeight/2, 0.2);
-			}
-			break;
-			
-			case StyleEnum.Proto:{
-				HUDAlpha = lerp(HUDAlpha, 0, 0.2);
-			}
-			break;
-		}
-	}
 	
 	// Set Up Ring Drain.
 	if(instance_exists(Player)){
 		if(Player.form != PlayerFormNormal){
-			StageRingStep--
-			if(StageRingStep <= 0)
+			if(GameData.ObjectTimer mod 60 == 0)
 			{
-				StageRings -= 1;
-				StageRingStep = 60;
+				GameData.StageRings -= 1;
 			}
 		}
 	}
@@ -74,7 +27,10 @@
 	
 	// Hide/Show HUD
 	if(keyboard_check_pressed(ord("H"))){
-		HUDShow = !HUDShow;
+		with(uiHUD)
+		{
+			HUDShow = !HUDShow;
+		}
 	}
 	
 	// Pause the Game

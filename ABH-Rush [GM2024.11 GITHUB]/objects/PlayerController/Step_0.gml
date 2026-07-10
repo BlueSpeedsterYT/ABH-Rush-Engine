@@ -49,7 +49,7 @@
 		newAlarm[3] -= 1;
 		if(newAlarm[3] == 1)
 		{
-			GameData.CurrentLivesCount -= 1;
+			GameData.StageLives -= 1;
 			room_restart();
 			newAlarm[3] = 0;
 		}
@@ -97,7 +97,8 @@
 	}
 	
 	// Reset the sprites to the Idle ones if not moving.
-	if !allowMovement{
+	if(!allowMovement)
+	{
 		switch(character)
 		{
 			case PlayerSonic:
@@ -234,27 +235,6 @@
 		}
 	}
 	
-	// Layers!
-	if (collision_circle(x,y,17,trgLayerObject,true,false) && trgLayerObject.layerType == "Background") || collision_circle(x,y,17,trgLayerBG,true,false)
-	{
-		characterLayer = 0;
-	}  
-	
-	if (collision_circle(x,y,17,trgLayerObject,true,false) && trgLayerObject.layerType == "Foreground") || collision_circle(x,y,17,trgLayerFG,true,false)
-	{
-		characterLayer = 1;
-	} 
-	
-	if (collision_circle(x,y,17,trgLayerObject,true,false) && trgLayerObject.layerType == "From Background to Foreground") || collision_circle(x,y,17,trgLayerSwap,true,false)
-	{
-		if(speedX > 0 && ground) characterLayer = 1; else if(speedX < 0 && ground) characterLayer = 0; 
-	} 
-	
-	if (collision_circle(x,y,17,trgLayerObject,true,false) && trgLayerObject.layerType == "From Foreground to Background") || collision_circle(x,y,17,trgLayerSwap2,true,false)
-	{
-		if(speedX > 0 && ground) characterLayer = 0; else if(speedX < 0 && ground) characterLayer = 1; 
-	} 
-	
 	// Invincible after Damage.
 	if damageEffect > 0 
 	{
@@ -262,6 +242,3 @@
 	    if damageEffect == 1
 	        isHit = true;
 	}
-	
-	// Clamp Player X Area to avoid going out of bounds
-	x = clamp(x, PlayerCam.LimitLeft+16, PlayerCam.LimitRight-16);

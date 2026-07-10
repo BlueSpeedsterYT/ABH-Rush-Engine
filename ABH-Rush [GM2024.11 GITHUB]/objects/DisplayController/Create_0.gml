@@ -1,3 +1,3 @@
 /// @description Init Display Controller
 
-	WindowScale = 2;
+	event_user(0);

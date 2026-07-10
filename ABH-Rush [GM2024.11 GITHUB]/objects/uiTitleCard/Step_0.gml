@@ -77,7 +77,7 @@
 				Player.allowMovement = true;
 				Player.ground = true;
 				Player.animDir = 1;
-				if(!GameData.StageCheckPointPassed)
+				if(GameData.StageCheckPointID == noone)
 				{
 					Player.speedX = 9;
 				}
@@ -96,6 +96,6 @@
 	if(titleState == 5)
 	{
 		Stage.EnableTimer = true;
-		Stage.HUDShow = true;
+		uiHUD.HUDShow = true;
 		instance_destroy();
 	};

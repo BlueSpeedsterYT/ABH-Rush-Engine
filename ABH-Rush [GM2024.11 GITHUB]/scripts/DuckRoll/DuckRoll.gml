@@ -15,16 +15,19 @@ function DuckRoll(){
 		}    
 	}
 
-	if actionCurrent == PlayerActionLookDown && keyDown {
+	if(actionCurrent == PlayerActionLookDown && keyDown)
+	{
 		lookTimer += 2;
 	}
 
-	if(actionCurrent == PlayerActionLookDown && !keyDown && image_index > 4){
+	if(actionCurrent == PlayerActionLookDown && !keyDown && image_index > 4)
+	{
 		actionCurrent = PlayerActionNormal;
 		lookTimer = 0;
 	}///un duck
 	
-	if actionCurrent == PlayerActionRoll && abs(speedX) < 0.5 && ground {
+	if(actionCurrent == PlayerActionRoll && abs(speedX) < 0.5 && ground)
+	{
 		actionCurrent = PlayerActionNormal;
 	}///un roll
 	

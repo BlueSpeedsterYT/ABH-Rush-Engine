@@ -16,9 +16,9 @@
 	image_angle = point_direction(Player.x_begin, Player.y_begin, x, y)
 	
 	if abs(Player.speedX) < 5
-	    DisableCamera(10);
+	    DelayCamera(10);
 	else 
-	    DisableCamera(8);
+	    DelayCamera(8);
 	
 	Player.speedX = Player.speedLimitX*Player.animDir;
 	

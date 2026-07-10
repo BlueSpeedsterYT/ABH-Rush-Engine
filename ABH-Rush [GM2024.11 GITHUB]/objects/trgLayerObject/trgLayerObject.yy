@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"trgLayerObject",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"PlayerController","path":"objects/PlayerController/PlayerController.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"trgLayerObject",
   "overriddenProperties":[],
@@ -30,6 +32,7 @@
         "\"From Background to Foreground\"",
         "\"From Foreground to Background\"",
       ],"multiselect":false,"name":"layerType","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"Background\"","varType":6,},
+    {"$GMObjectProperty":"v1","%Name":"groundedOnly","filters":[],"listItems":[],"multiselect":false,"name":"groundedOnly","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

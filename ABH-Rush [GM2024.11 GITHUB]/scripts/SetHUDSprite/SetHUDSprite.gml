@@ -2,9 +2,9 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function SetHUDSprite(_miraiSprite, _protoSprite, _legacySprite){
 
-	if instance_exists(Stage){
-		with (Stage){
-			switch(StageHUDType){
+	if instance_exists(uiHUD){
+		with (uiHUD){
+			switch(HUDType){
 				case StyleEnum.Mirai:
 				{
 					return _miraiSprite;
@@ -26,7 +26,7 @@ function SetHUDSprite(_miraiSprite, _protoSprite, _legacySprite){
 		}
 	}
 	else{
-		show_message("[WARNING]\n'StageController' not found in the current Stage.\nPlease add it to allow the script to function.")
+		show_message("[WARNING]\n'uiHUD' not found in the current Stage.\nPlease add it manually to allow the script to function.")
 	}
 
 }

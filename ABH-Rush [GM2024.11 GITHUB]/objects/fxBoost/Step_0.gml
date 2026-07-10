@@ -33,8 +33,10 @@ if(alive)
     //if Player.actionCurrent != PlayerActionCorkscrew && Player.actionCurrent != PlayerActionRollCorkscrew
         image_angle = Player.boost_direction //point_direction(Player.x_begin,Player.y_begin,x,y);
     
-    if image_angle > 90 && image_angle < 270
-        image_yscale = -1
+    if(image_angle > 90 && image_angle < 270)
+	{
+        image_yscale = -1;
+	}
 	
 	if(Player.keyBoost || Player.boostAmount <= 0 || Player.keyBoostReleased
     || Player.actionCurrent == PlayerActionSwing || Player.actionCurrent == PlayerActionQTEInit || Player.actionCurrent == PlayerActionHomingNoTarget || Player.actionCurrent == PlayerActionHomingTarget

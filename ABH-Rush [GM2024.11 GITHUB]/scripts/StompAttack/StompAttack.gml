@@ -31,7 +31,8 @@ function StompAttack(){
 		speedY = speedLimitY;
 		if ground {
 			gamepad_set_rumble(30);
-			EnableShockwave(30);
+			ShakeCamX(30);
+			ShakeCamY(30);
 			actionCurrent = PlayerActionNormal;
 			image_index = 0;
 			speedY = 0;

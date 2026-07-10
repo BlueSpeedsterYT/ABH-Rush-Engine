@@ -7,23 +7,23 @@
 		{
 			if(trigger[i])
 			{
-				var reposition_x =  ((camera_get_view_x(view_camera[view_current])*factor_x[i]) + offset_x[i])
-				diff_x[i] = reposition_x - camera_get_view_x(view_camera[view_current]);
+				var reposition_x =  ((CameraViewX*factor_x[i]) + offset_x[i])
+				diff_x[i] = reposition_x - CameraViewX;
 				offset_x[i] += offset_x[i] - diff_x[i]
 				
-				var reposition_y =  ((camera_get_view_y(view_camera[view_current])*factor_y[i]) + offset_y[i])
-				diff_y[i] = reposition_y - camera_get_view_y(view_camera[view_current]);
+				var reposition_y =  ((CameraViewY*factor_y[i]) + offset_y[i])
+				diff_y[i] = reposition_y - CameraViewY;
 				offset_y[i] += offset_y[i] - diff_y[i]
 
 				trigger[i] = false;
 			}
 		
 			//Normal scrolling
-			pos_x[i] = ((camera_get_view_x(view_camera[view_current])*factor_x[i]) + offset_x[i])
-			pos_y[i] = floor(camera_get_view_y(view_camera[view_current])*factor_y[i] + offset_y[i]);
+			pos_x[i] = ((CameraViewX*factor_x[i]) + offset_x[i])
+			pos_y[i] = floor(CameraViewY*factor_y[i] + offset_y[i]);
 		
-			diff_x[i] = pos_x[i] - camera_get_view_x(view_camera[view_current]);
-			diff_y[i] = pos_y[i] - camera_get_view_y(view_camera[view_current]);
+			diff_x[i] = pos_x[i] - CameraViewX;
+			diff_y[i] = pos_y[i] - CameraViewY;
 
 
 			//Auto scrolling
@@ -34,23 +34,23 @@
 		{
 			if(trigger[i])
 			{
-				var reposition_x = ((camera_get_view_x(view_camera[view_current])*(factor_x[i])) + offset_x[i]);
-				diff_x[i] = reposition_x - camera_get_view_x(view_camera[view_current]);
+				var reposition_x = ((CameraViewX*(factor_x[i])) + offset_x[i]);
+				diff_x[i] = reposition_x - CameraViewX;
 				offset_x[i] += offset_x[i] - diff_x[i]
 				
-				var reposition_y =  ((camera_get_view_y(view_camera[view_current])*factor_y[i]) + offset_y[i])
-				diff_y[i] = reposition_y - camera_get_view_y(view_camera[view_current]);
+				var reposition_y =  ((CameraViewY*factor_y[i]) + offset_y[i])
+				diff_y[i] = reposition_y - CameraViewY;
 				offset_y[i] += offset_y[i] - diff_y[i]
 				
 				trigger[i] = false;
 			}
 		
 			//Normal scrolling
-			pos_x[i] = ((camera_get_view_x(view_camera[view_current])*(1-factor_x[i])) - offset_x[i]);
-			pos_y[i] = floor(camera_get_view_y(view_camera[view_current])*factor_y[i] + offset_y[i]);
+			pos_x[i] = ((CameraViewX*(1-factor_x[i])) - offset_x[i]);
+			pos_y[i] = floor(CameraViewY*factor_y[i] + offset_y[i]);
 		
-			diff_x[i] = ((camera_get_view_x(view_camera[view_current])*factor_x[i]) + offset_x[i]) - camera_get_view_x(view_camera[view_current])
-			diff_y[i] = (floor(camera_get_view_y(view_camera[view_current])*factor_y[i]) + offset_y[i]) - camera_get_view_y(view_camera[view_current])
+			diff_x[i] = ((CameraViewX*factor_x[i]) + offset_x[i]) - CameraViewX
+			diff_y[i] = (floor(CameraViewY*factor_y[i]) + offset_y[i]) - CameraViewY
 
 
 			//Auto scrolling
@@ -73,13 +73,13 @@
 			shader_set_uniform_f(BGWidth, sprite_get_width(background_sprite[i]));
 			shader_set_uniform_f(BGTexel, texture_get_texel_width(sprite_get_texture(background_sprite[i], 0)));
 			shader_set_uniform_f(OffX, pos_x[i]);
-			shader_set_uniform_f(PosX, camera_get_view_x(view_camera[view_current]), pos_y[i]);
+			shader_set_uniform_f(PosX, CameraViewX, pos_y[i]);
 			shader_set_uniform_f(StepY, line_steps[i]/(1-factor_x[i]));
 			shader_set_uniform_f(HeightY, line_gap[i]);
 			shader_set_uniform_f(ScaleY, bg_scale[i]); 
 			shader_set_uniform_f(ShdHeight, sprite_get_height(background_sprite[i])); 
 			
-			if (visibility[i] == true) draw_sprite_ext(background_sprite[i], background_frame[i], camera_get_view_x(view_camera[view_current]), floor(pos_y[i]) , 1, bg_scale[i], 0, c_white, 1);
+			if (visibility[i] == true) draw_sprite_ext(background_sprite[i], background_frame[i], CameraViewX, floor(pos_y[i]) , 1, bg_scale[i], 0, c_white, 1);
 		}
 		shader_reset()
 	}
